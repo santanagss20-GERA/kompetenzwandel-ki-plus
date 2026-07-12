@@ -1,0 +1,22 @@
+{
+  "name": "KompetenzWandel KI+",
+  "short_name": "KW KI+",
+  "description": "KI-gestütztes Kompetenz-Upgrade von GSS Management Consulting in Frankfurt.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbfdfe",
+  "theme_color": "#0b2545",
+  "icons": [
+    {
+      "src": "assets/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

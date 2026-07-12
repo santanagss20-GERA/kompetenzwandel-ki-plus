@@ -1,6 +1,6 @@
 const SOCIAL_URLS = {
   linkedin: "https://www.linkedin.com/in/geraldine-sep%C3%BAlveda-santana-681823a3",
-  instagram: "https://www.instagram.com/gss_sonsulting/"
+  instagram: "https://www.instagram.com/gss_consulting/"
 };
 
 const WHATSAPP_URL = "";
@@ -74,6 +74,7 @@ const translations = {
     "azav.text": "GSS entwickelt KompetenzWandel KI+ entlang eines strukturierten Qualitäts- und Förderrahmens. Die AZAV-Zertifizierung stärkt Transparenz, Dokumentation, Qualitätssicherung und arbeitsmarktliche Relevanz.",
     "azav.text2": "Im Mittelpunkt stehen individuelle Passung, nachvollziehbare Entwicklungsschritte und realistische Wege in Qualifizierung, berufliche Integration, Spezialisierung oder Selbständigkeit.",
     "azav.note": "Förderfähigkeit, Zugang über AVGS oder Bildungsgutschein sowie individuelle Voraussetzungen werden im Erstgespräch geprüft. Eine konkrete Förderung hängt von gültiger Zulassung, passender Maßnahme und Entscheidung des zuständigen Kostenträgers ab.",
+    "azav.cta": "Förderberatung",
     "azav.activationTitle": "Aktivierung und berufliche Eingliederung",
     "azav.activationText": "Anschlussfähig für Kompetenzfeststellung, berufliche Orientierung, Coaching, moderne Bewerbungsstrategie, Integrationsbegleitung sowie Wege in Beschäftigung oder passende Selbständigkeit.",
     "azav.trainingTitle": "Berufliche Weiterbildung",
@@ -93,6 +94,7 @@ const translations = {
     "profile.p1": "Geraldine Sepúlveda Santana, Inhaberin von GSS Management Consulting, entwickelt KompetenzWandel KI+ aus eigener Erfahrung und fachlicher Perspektive.",
     "profile.p2": "Sie bringt einen internationalen Hochschulabschluss als Ingeniera de Sistemas y Computación, Erfahrung als Analytikerin und Programmiererin, eine ZAB-Bewertung ihres Abschlusses, Weiterbildungen sowie ein Jahr Umschulung in Richtung Anwendungsentwicklung mit. Ihr eigener Weg führte über Anerkennungs- und Bewertungsprozesse, Weiterbildung, berufliche Übergänge und selbständige Tätigkeit bis in die heutige Arbeit als Beraterin, Coach, Dozentin sowie Sprach- und Kulturvermittlerin.",
     "profile.p3": "Ich habe selbst erlebt, wie viel berufliche Substanz in Übergängen unsichtbar bleiben kann. Deshalb entwickle ich KompetenzWandel KI+ als Upgrade statt Neustart: ein Modell, das vorhandene Erfahrung, Wissen und Kompetenzen sichtbar macht und in Zukunftskompetenz übersetzt.",
+    "profile.team": "Zum Kernteam gehören Geraldine Sepúlveda Santana (CEO / Geschäftsführung) und Klaus Schmidt (COO / Betriebsleitung). Gemeinsam verbinden sie Gründung, operative Umsetzung, Beratung, Integrationsarbeit und Prozesssteuerung.",
     "impact.eyebrow": "Impact",
     "impact.title": "Berufliche Welten zu Hause in Frankfurt.",
     "impact.text": "Frankfurt ist ein Ort vielfältiger, migrantischer und internationaler Berufsbiografien. KompetenzWandel KI+ macht vorhandene berufliche Substanz lokal sichtbar, digital anschlussfähig und praktisch nutzbar.",
@@ -113,6 +115,7 @@ const translations = {
     "contact.panelText": "Schreiben Sie kurz, ob Sie als teilnehmende Person, Unternehmen oder Kooperationskontakt Interesse haben. Im kostenlosen Erstgespräch klären wir Ausgangssituation, passende nächste Schritte und mögliche Zugänge über Förderung (AVGS oder Bildungsgutschein) oder Selbstzahlung.",
     "contact.emailLabel": "Direkt per E-Mail:",
     "contact.emailCta": "E-Mail senden",
+    "contact.phoneLabel": "Telefon:",
     "contact.primary": "Direkt per WhatsApp",
     "contact.secondary": "GSS Website öffnen",
     "contact.note": "Die Umsetzung wird vorbereitet. Erstgespräche, Vormerkungen und Förderberatung sind bereits möglich.",
@@ -148,7 +151,7 @@ const translations = {
     "footer.offer": "KompetenzWandel KI+",
     "footer.access": "Zugang & Förderung",
     "footer.freeCall": "Kostenloses Erstgespräch",
-    "footer.avgs": "FÖRDERUNG-BERATUNG",
+    "footer.avgs": "Förderberatung",
     "footer.voucher": "Bildungsgutschein klären",
     "footer.email": "info@gss-consulting.de",
     "footer.website": "GSS Website",
@@ -174,7 +177,7 @@ const translations = {
     "modulePage.outcome": "Ergebnis",
     "modulePage.accessTitle": "Zugang & Förderung",
     "form.eyebrow": "Anmeldung & Beratung",
-    "form.title": "Erstgespräch, Anmeldung oder Förderung klären.",
+    "form.title": "Erstgespräch, Anmeldung oder Förderberatung anfragen.",
     "form.text": "Füllen Sie die Felder aus. Beim Absenden wird eine vorbereitete E-Mail an GSS Management Consulting geöffnet; es werden keine Daten über die Website gespeichert.",
     "form.name": "Name",
     "form.email": "E-Mail",
@@ -189,18 +192,29 @@ const translations = {
     "form.optionVoucher": "Bildungsgutschein klären",
     "form.optionFunding": "Förderberatung anfragen",
     "form.message": "Kurzbeschreibung",
+    "form.messagePlaceholder": "Ausgangssituation, beruflicher Hintergrund, Anerkennung/ZAB, gewünschter nächster Schritt",
+    "form.mailGreeting": "Hallo GSS Management Consulting,",
+    "form.mailInterested": "ich interessiere mich für:",
+    "form.mailRequest": "Anliegen:",
+    "form.mailName": "Name:",
+    "form.mailEmail": "E-Mail:",
+    "form.mailRole": "Rolle:",
+    "form.mailDescription": "Kurzbeschreibung:",
+    "form.mailContact": "Bitte kontaktieren Sie mich für ein Erstgespräch.",
+    "form.mailClosing": "Viele Grüße",
     "form.submit": "E-Mail vorbereiten",
     "form.note": "Hinweis: Förderfähigkeit setzt gültige Zulassungen, passende Maßnahmen und die individuelle Entscheidung des Kostenträgers voraus.",
     "imprint.eyebrow": "Anbieterkennzeichnung",
     "imprint.title": "Impressum",
-    "imprint.provider": "<strong>GSS Management Consulting</strong><br>Inhaberin: Geraldine Sepúlveda Santana<br>Frankfurt am Main, Deutschland",
+    "imprint.provider": "<strong>GSS Management Consulting</strong><br>Inhaberin: Geraldine Sepúlveda Santana<br>Hanauer Landstraße 521, Büros 129-130, 1. Etage<br>60386 Frankfurt am Main<br>Deutschland<br>USt-IdNr.: DE459498394",
     "imprint.emailLabel": "E-Mail:",
+    "imprint.phoneLabel": "Telefon:",
     "imprint.websiteLabel": "Website:",
-    "imprint.note": "Diese Landingpage ist eine Projektseite zu KompetenzWandel KI+ von GSS Management Consulting. Die vollständige ladungsfähige Anschrift und weitere Pflichtangaben werden vor produktiver Veröffentlichung im Impressum der GSS Website ergänzt.",
+    "imprint.note": "Diese Landingpage ist eine Projektseite zu KompetenzWandel KI+ von GSS Management Consulting. Die Umsatzsteuer-Identifikationsnummer wurde gemäß § 27a UStG erteilt; die Steuernummer wird nicht öffentlich ausgewiesen.",
     "imprint.liability": "Die Inhalte werden sorgfältig erstellt. Für Vollständigkeit, Aktualität und externe Links kann keine Gewähr übernommen werden. Eigene Texte, Gestaltung und Markenbestandteile dürfen nur im Rahmen des geltenden Urheber- und Kennzeichenrechts genutzt werden.",
     "privacy.eyebrow": "Datenschutz",
     "privacy.title": "Datenschutzhinweise",
-    "privacy.controller": "Verantwortlich für diese Projektseite ist GSS Management Consulting, Geraldine Sepúlveda Santana, Frankfurt am Main. Kontakt: info@gss-consulting.de.",
+    "privacy.controller": "Verantwortlich für diese Projektseite ist GSS Management Consulting, Geraldine Sepúlveda Santana, Hanauer Landstraße 521, Büros 129-130, 1. Etage, 60386 Frankfurt am Main. Kontakt: info@gss-consulting.de, Telefon: +49 176 32428387.",
     "privacy.contact": "Wenn Sie per E-Mail Kontakt aufnehmen, verarbeiten wir die von Ihnen übermittelten Angaben ausschließlich zur Bearbeitung Ihrer Anfrage, zur Vorbereitung eines Gesprächs und zur Kommunikation über KompetenzWandel KI+.",
     "privacy.localStorage": "Die Sprachauswahl wird lokal im Browser gespeichert, damit die Seite beim nächsten Besuch in der gewählten Sprache geöffnet werden kann. Es wird kein Tracking-Cookie gesetzt.",
     "privacy.external": "Diese Vorabversion nutzt externe Schriftarten und Bildquellen. Beim produktiven Betrieb sollten Anbieter, Zwecke, Rechtsgrundlagen und mögliche Drittlandübermittlungen in der finalen Datenschutzerklärung konkret dokumentiert oder die Medien lokal eingebunden werden.",
@@ -270,6 +284,7 @@ const translations = {
     "azav.text": "GSS is developing KompetenzWandel KI+ along a structured quality and funding framework. AZAV certification strengthens transparency, documentation, quality assurance and labor-market relevance.",
     "azav.text2": "The focus is on individual fit, traceable development steps and realistic routes into qualification, professional integration, specialization or self-employment.",
     "azav.note": "Funding eligibility, access through AVGS or Bildungsgutschein and individual requirements are reviewed in the first consultation. Concrete funding depends on valid approval, a suitable measure and the decision of the responsible funding body.",
+    "azav.cta": "Funding consultation",
     "azav.activationTitle": "Activation and professional integration",
     "azav.activationText": "Connectable to competence assessment, professional orientation, coaching, modern application strategy, integration support and routes into employment or suitable self-employment.",
     "azav.trainingTitle": "Vocational further training",
@@ -289,6 +304,7 @@ const translations = {
     "profile.p1": "Geraldine Sepúlveda Santana, owner of GSS Management Consulting, develops KompetenzWandel KI+ from lived experience and professional expertise.",
     "profile.p2": "She brings an international university degree as Ingeniera de Sistemas y Computación, experience as an analyst and programmer, a ZAB evaluation of her degree, further training and one year of retraining toward application development. Her own path led through recognition and evaluation processes, further training, professional transitions and self-employment into her current work as consultant, coach, lecturer and language and cultural mediator.",
     "profile.p3": "I have experienced myself how much professional substance can remain invisible during transitions. That is why I am developing KompetenzWandel KI+ as an upgrade instead of a restart: a model that makes existing experience, knowledge and competencies visible and translates them into future-ready competence.",
+    "profile.team": "The core team consists of Geraldine Sepúlveda Santana (CEO / management) and Klaus Schmidt (COO / operations management). Together, they connect founding, operational implementation, consulting, integration work and process steering.",
     "impact.eyebrow": "Impact",
     "impact.title": "Professional worlds at home in Frankfurt.",
     "impact.text": "Frankfurt is a place of diverse migrant and international professional biographies. KompetenzWandel KI+ makes existing professional substance locally visible, digitally connectable and practically usable.",
@@ -309,6 +325,7 @@ const translations = {
     "contact.panelText": "Send a short note saying whether you are interested as a participant, company or cooperation contact. In the free first consultation, we clarify the starting point, suitable next steps and possible access through funding (AVGS or Bildungsgutschein) or self-payment.",
     "contact.emailLabel": "Direct email:",
     "contact.emailCta": "Send email",
+    "contact.phoneLabel": "Phone:",
     "contact.primary": "Direct WhatsApp",
     "contact.secondary": "Open GSS website",
     "contact.note": "Implementation is being prepared. First consultations, participation reservations and funding consultation are already possible.",
@@ -370,7 +387,7 @@ const translations = {
     "modulePage.outcome": "Outcome",
     "modulePage.accessTitle": "Access & funding",
     "form.eyebrow": "Application & consultation",
-    "form.title": "Clarify first consultation, application or funding.",
+    "form.title": "Request first consultation, application or funding consultation.",
     "form.text": "Fill in the fields. On submit, a prepared email to GSS Management Consulting opens; no data is stored by the website.",
     "form.name": "Name",
     "form.email": "Email",
@@ -385,18 +402,29 @@ const translations = {
     "form.optionVoucher": "Clarify Bildungsgutschein",
     "form.optionFunding": "Request funding consultation",
     "form.message": "Short description",
+    "form.messagePlaceholder": "Starting point, professional background, recognition/ZAB status, desired next step",
+    "form.mailGreeting": "Hello GSS Management Consulting,",
+    "form.mailInterested": "I am interested in:",
+    "form.mailRequest": "Request:",
+    "form.mailName": "Name:",
+    "form.mailEmail": "Email:",
+    "form.mailRole": "Role:",
+    "form.mailDescription": "Short description:",
+    "form.mailContact": "Please contact me for a first consultation.",
+    "form.mailClosing": "Kind regards",
     "form.submit": "Prepare email",
     "form.note": "Note: Funding eligibility requires valid approvals, suitable measures and the individual decision of the funding body.",
     "imprint.eyebrow": "Provider information",
     "imprint.title": "Legal notice",
-    "imprint.provider": "<strong>GSS Management Consulting</strong><br>Owner: Geraldine Sepúlveda Santana<br>Frankfurt am Main, Germany",
+    "imprint.provider": "<strong>GSS Management Consulting</strong><br>Owner: Geraldine Sepúlveda Santana<br>Hanauer Landstraße 521, Offices 129-130, 1st floor<br>60386 Frankfurt am Main<br>Germany<br>VAT ID: DE459498394",
     "imprint.emailLabel": "Email:",
+    "imprint.phoneLabel": "Phone:",
     "imprint.websiteLabel": "Website:",
-    "imprint.note": "This landing page is a project page for KompetenzWandel KI+ by GSS Management Consulting. The full service address and further mandatory provider details will be added to the legal notice of the GSS website before productive publication.",
+    "imprint.note": "This landing page is a project page for KompetenzWandel KI+ by GSS Management Consulting. The VAT identification number was issued under Sec. 27a German VAT Act; the tax number is not published.",
     "imprint.liability": "The content is prepared with care. No guarantee can be given for completeness, currentness or external links. Own texts, design and brand elements may be used only within the limits of applicable copyright and trademark law.",
     "privacy.eyebrow": "Privacy",
     "privacy.title": "Privacy information",
-    "privacy.controller": "The controller for this project page is GSS Management Consulting, Geraldine Sepúlveda Santana, Frankfurt am Main. Contact: info@gss-consulting.de.",
+    "privacy.controller": "The controller for this project page is GSS Management Consulting, Geraldine Sepúlveda Santana, Hanauer Landstraße 521, Offices 129-130, 1st floor, 60386 Frankfurt am Main. Contact: info@gss-consulting.de, phone: +49 176 32428387.",
     "privacy.contact": "If you contact us by email, we process the information you provide only to handle your inquiry, prepare a conversation and communicate about KompetenzWandel KI+.",
     "privacy.localStorage": "The language selection is stored locally in your browser so that the page can open in your chosen language on your next visit. No tracking cookie is set.",
     "privacy.external": "This preview version uses external fonts and image sources. For productive operation, providers, purposes, legal bases and possible third-country transfers should be documented in the final privacy policy, or the media should be hosted locally.",
@@ -466,6 +494,7 @@ const translations = {
     "azav.text": "GSS desarrolla KompetenzWandel KI+ dentro de un marco estructurado de calidad y financiación. La certificación AZAV fortalece transparencia, documentación, aseguramiento de calidad y relevancia para el mercado laboral.",
     "azav.text2": "El foco está en la adecuación individual, pasos de desarrollo trazables y rutas realistas hacia cualificación, integración profesional, especialización o autoempleo.",
     "azav.note": "La posibilidad de financiación, el acceso mediante AVGS o Bildungsgutschein y los requisitos individuales se revisan en la primera conversación. Una financiación concreta depende de autorización válida, medida adecuada y decisión del organismo financiador competente.",
+    "azav.cta": "Asesoría de financiación",
     "azav.activationTitle": "Activación e integración profesional",
     "azav.activationText": "Conectable con detección de competencias, orientación profesional, coaching, estrategia moderna de candidatura, acompañamiento de integración y rutas hacia empleo o autoempleo adecuado.",
     "azav.trainingTitle": "Formación profesional continua",
@@ -485,6 +514,7 @@ const translations = {
     "profile.p1": "Geraldine Sepúlveda Santana, titular de GSS Management Consulting, desarrolla KompetenzWandel KI+ desde su propia experiencia y desde una perspectiva profesional.",
     "profile.p2": "Aporta un título universitario internacional como Ingeniera de Sistemas y Computación, experiencia como analista y programadora, una evaluación ZAB de su título, formaciones complementarias y un año de reconversión formativa hacia desarrollo de aplicaciones. Su propio camino pasó por procesos de reconocimiento y evaluación, formación continua, transiciones profesionales y trabajo autónomo hasta su actividad actual como consultora, coach, docente y mediadora lingüística y cultural.",
     "profile.p3": "Yo misma he vivido cuánta sustancia profesional puede quedar invisible en las transiciones. Por eso desarrollo KompetenzWandel KI+ como upgrade en vez de empezar de cero: un modelo que hace visibles la experiencia, los conocimientos y las competencias existentes, y las traduce en competencias de futuro.",
+    "profile.team": "El equipo central está formado por Geraldine Sepúlveda Santana (CEO / dirección) y Klaus Schmidt (COO / dirección operativa). Juntos conectan creación de empresa, implementación operativa, consultoría, trabajo de integración y gestión de procesos.",
     "impact.eyebrow": "Impacto",
     "impact.title": "Mundos profesionales con hogar en Frankfurt.",
     "impact.text": "Frankfurt es un lugar de biografías profesionales diversas, migrantes e internacionales. KompetenzWandel KI+ hace visible la sustancia profesional existente en el contexto local, la conecta digitalmente y la vuelve útil en la práctica.",
@@ -502,9 +532,10 @@ const translations = {
     "contact.title": "¿Interés en KompetenzWandel KI+?",
     "contact.text": "Para una primera conversación, asesoría sobre financiación o una reserva de participación, puedes contactar directamente.",
     "contact.panelTitle": "Primera conversación gratuita",
-    "contact.panelText": "Envía un mensaje breve indicando si te interesa como participante, empresa o contacto de cooperación. En la primera conversación gratuita aclaramos la situación inicial, los próximos pasos adecuados y posibles accesos mediante financiación (AVGS o Bildungsgutschein) o pago propio.",
+    "contact.panelText": "Envía un mensaje breve indicando si te interesa como participante, empresa o contacto de cooperación. En la primera conversación gratuita revisamos la situación inicial, los próximos pasos adecuados y posibles accesos mediante financiación (AVGS o Bildungsgutschein) o pago propio.",
     "contact.emailLabel": "Correo directo:",
     "contact.emailCta": "Enviar correo",
+    "contact.phoneLabel": "Teléfono:",
     "contact.primary": "Directo por WhatsApp",
     "contact.secondary": "Abrir sitio web de GSS",
     "contact.note": "La implementación está en preparación. Las primeras conversaciones, reservas de participación y asesorías de financiación ya son posibles.",
@@ -541,7 +572,7 @@ const translations = {
     "footer.access": "Acceso y financiación",
     "footer.freeCall": "Primera conversación gratuita",
     "footer.avgs": "Asesoría de financiación",
-    "footer.voucher": "Aclarar Bildungsgutschein",
+    "footer.voucher": "Revisar Bildungsgutschein",
     "footer.email": "info@gss-consulting.de",
     "footer.website": "Sitio web de GSS",
     "footer.imprint": "Aviso legal",
@@ -566,7 +597,7 @@ const translations = {
     "modulePage.outcome": "Resultado",
     "modulePage.accessTitle": "Acceso y financiación",
     "form.eyebrow": "Inscripción y asesoría",
-    "form.title": "Aclarar primera conversación, inscripción o financiación.",
+    "form.title": "Solicitar primera conversación, preinscripción o asesoría de financiación.",
     "form.text": "Completa los campos. Al enviar, se abre un correo preparado para GSS Management Consulting; la página no guarda datos.",
     "form.name": "Nombre",
     "form.email": "Correo electrónico",
@@ -577,22 +608,33 @@ const translations = {
     "form.interest": "Solicitud",
     "form.optionCall": "Primera conversación gratuita",
     "form.optionRegister": "Preinscripción",
-    "form.optionAvgs": "Canjear / aclarar AVGS",
-    "form.optionVoucher": "Aclarar Bildungsgutschein",
+    "form.optionAvgs": "Canjear / revisar AVGS",
+    "form.optionVoucher": "Revisar Bildungsgutschein",
     "form.optionFunding": "Solicitar asesoría de financiación",
     "form.message": "Descripción breve",
+    "form.messagePlaceholder": "Situación inicial, perfil profesional, reconocimiento/ZAB, próximo paso deseado",
+    "form.mailGreeting": "Hola GSS Management Consulting,",
+    "form.mailInterested": "Me interesa:",
+    "form.mailRequest": "Solicitud:",
+    "form.mailName": "Nombre:",
+    "form.mailEmail": "Correo electrónico:",
+    "form.mailRole": "Rol:",
+    "form.mailDescription": "Descripción breve:",
+    "form.mailContact": "Por favor, contáctenme para una primera conversación.",
+    "form.mailClosing": "Saludos cordiales",
     "form.submit": "Preparar correo",
     "form.note": "Nota: la financiación requiere autorizaciones válidas, medidas adecuadas y la decisión individual del organismo financiador.",
     "imprint.eyebrow": "Datos de la entidad responsable",
     "imprint.title": "Aviso legal",
-    "imprint.provider": "<strong>GSS Management Consulting</strong><br>Titular: Geraldine Sepúlveda Santana<br>Frankfurt am Main, Alemania",
+    "imprint.provider": "<strong>GSS Management Consulting</strong><br>Titular: Geraldine Sepúlveda Santana<br>Hanauer Landstraße 521, oficinas 129-130, 1.er piso<br>60386 Frankfurt am Main<br>Alemania<br>NIF-IVA/USt-IdNr.: DE459498394",
     "imprint.emailLabel": "Correo electrónico:",
+    "imprint.phoneLabel": "Teléfono:",
     "imprint.websiteLabel": "Sitio web:",
-    "imprint.note": "Esta landing page es una página de proyecto sobre KompetenzWandel KI+ de GSS Management Consulting. La dirección completa para efectos legales y los demás datos obligatorios se añadirán al aviso legal del sitio web de GSS antes de la publicación productiva.",
+    "imprint.note": "Esta landing page es una página de proyecto sobre KompetenzWandel KI+ de GSS Management Consulting. El número de identificación de IVA fue emitido conforme al § 27a UStG; la Steuernummer no se publica.",
     "imprint.liability": "Los contenidos se elaboran con cuidado. No se puede garantizar su integridad, actualidad ni los contenidos de enlaces externos. Los textos, el diseño y los elementos de marca propios solo pueden utilizarse dentro del marco legal aplicable de derechos de autor y marcas.",
     "privacy.eyebrow": "Protección de datos",
     "privacy.title": "Información sobre protección de datos",
-    "privacy.controller": "La entidad responsable de esta página de proyecto es GSS Management Consulting, Geraldine Sepúlveda Santana, Frankfurt am Main. Contacto: info@gss-consulting.de.",
+    "privacy.controller": "La entidad responsable de esta página de proyecto es GSS Management Consulting, Geraldine Sepúlveda Santana, Hanauer Landstraße 521, oficinas 129-130, 1.er piso, 60386 Frankfurt am Main. Contacto: info@gss-consulting.de, teléfono: +49 176 32428387.",
     "privacy.contact": "Si contactas por correo electrónico, procesamos los datos que nos envíes únicamente para responder tu solicitud, preparar una conversación y comunicarnos sobre KompetenzWandel KI+.",
     "privacy.localStorage": "La selección de idioma se guarda localmente en tu navegador para que la página pueda abrirse en el idioma elegido en la próxima visita. No se instala ninguna cookie de seguimiento.",
     "privacy.external": "Esta versión previa utiliza fuentes e imágenes externas. Para el funcionamiento productivo, los proveedores, fines, bases legales y posibles transferencias a terceros países deben documentarse en la política de privacidad final, o los medios deben alojarse localmente.",
@@ -701,7 +743,7 @@ const moduleDetails = {
         "perfil objetivo, plan KompetenzWandel y primera decisión de ruta"
       ],
       outcome: "Un perfil claro de competencias con próximos pasos: qué experiencia, conocimientos y competencias ya pueden hacerse visibles, qué competencias conviene complementar y qué ruta de conexión profesional es realista.",
-      access: "En la primera conversación se aclara si el acceso mediante financiación (AVGS o Bildungsgutschein) o pago propio es adecuado. El scan sirve como entrada para asesoría, integración profesional o nuevos pasos de cualificación.",
+      access: "En la primera conversación revisamos si el acceso mediante financiación (AVGS o Bildungsgutschein) o pago propio es adecuado. El scan sirve como entrada para asesoría, integración profesional o nuevos pasos de cualificación.",
       visualClass: "detail-visual-scan"
     },
     basis: {
@@ -715,7 +757,7 @@ const moduleDetails = {
         "ejercicios prácticos para documentación, investigación, automarketing, estrategias modernas de candidatura, presentación y conversaciones profesionales"
       ],
       outcome: "Las personas participantes no parten de cero, sino de una base digital y de IA comparable sobre la que pueden construirse especializaciones y formación continua.",
-      access: "En la primera conversación se aclara si el acceso mediante financiación (AVGS o Bildungsgutschein) o pago propio es adecuado. El BasisPass puede conectarse con formación profesional continua, revisión de Bildungsgutschein y módulos complementarios.",
+      access: "En la primera conversación revisamos si el acceso mediante financiación (AVGS o Bildungsgutschein) o pago propio es adecuado. El BasisPass puede conectarse con formación profesional continua, revisión de Bildungsgutschein y módulos complementarios.",
       visualClass: "detail-visual-basis"
     },
     praxis: {
@@ -729,7 +771,7 @@ const moduleDetails = {
         "ruta de transformación con tareas de transferencia, formación, especialización y decisión clara de ruta"
       ],
       outcome: "Un plan accionable que conecta experiencia, conocimientos y competencias existentes con práctica, formación continua y visibilidad profesional.",
-      access: "En la primera conversación se aclara si el acceso mediante financiación (AVGS o Bildungsgutschein) o pago propio es adecuado. La ruta de transformación prepara transferencia, conversaciones de continuidad, formatos de práctica o cualificación adicional.",
+      access: "En la primera conversación revisamos si el acceso mediante financiación (AVGS o Bildungsgutschein) o pago propio es adecuado. La ruta de transformación prepara transferencia, conversaciones de continuidad, formatos de práctica o cualificación adicional.",
       visualClass: "detail-visual-praxis"
     }
   }
@@ -872,14 +914,19 @@ function applyLanguage(lang) {
   renderModuleDetail(active);
   setupModuleCarousel();
   const titles = {
-    de: "KompetenzWandel KI+ | GSS Management Consulting",
-    en: "KompetenzWandel KI+ | GSS Management Consulting",
-    es: "KompetenzWandel KI+ | GSS Management Consulting"
+    de: "KompetenzWandel KI+ | KI-gestütztes Kompetenz-Upgrade in Frankfurt",
+    en: "KompetenzWandel KI+ | AI-supported competence upgrade in Frankfurt",
+    es: "KompetenzWandel KI+ | Upgrade de competencias con IA en Frankfurt"
+  };
+  const moduleTitles = {
+    de: "Module | KompetenzWandel KI+ | KompetenzScan, BasisPass und Wandelpfad",
+    en: "Modules | KompetenzWandel KI+ | Competence Scan, BasisPass and Change Path",
+    es: "Módulos | KompetenzWandel KI+ | Escaneo, BasisPass y ruta de cambio"
   };
   const legalTitles = {
-    de: "Rechtliches | KompetenzWandel KI+",
-    en: "Legal Notice | KompetenzWandel KI+",
-    es: "Aviso legal | KompetenzWandel KI+"
+    de: "Impressum & Datenschutz | KompetenzWandel KI+ | GSS Management Consulting",
+    en: "Legal Notice & Privacy | KompetenzWandel KI+ | GSS Management Consulting",
+    es: "Aviso legal y protección de datos | KompetenzWandel KI+ | GSS Management Consulting"
   };
   const versionTitles = {
     de: "Versionen | KompetenzWandel KI+",
@@ -890,6 +937,8 @@ function applyLanguage(lang) {
     document.title = legalTitles[active];
   } else if (window.location.pathname.endsWith("versionen.html")) {
     document.title = versionTitles[active];
+  } else if (document.querySelector(".module-page-main")) {
+    document.title = moduleTitles[active];
   } else if (!document.querySelector(".module-page-main")) {
     document.title = titles[active];
   }
@@ -1164,22 +1213,23 @@ if (moduleForm) {
     const role = document.querySelector("#formRole")?.selectedOptions[0]?.textContent.trim() || "";
     const interest = document.querySelector("#formInterest")?.selectedOptions[0]?.textContent.trim() || "";
     const message = document.querySelector("#formMessage")?.value.trim() || "";
+    const dict = translations[lang] || translations.de;
     const subject = `KompetenzWandel KI+ - ${detail.title} - ${interest}`;
     const body = [
-      "Hallo GSS Management Consulting,",
+      dict["form.mailGreeting"],
       "",
-      `ich interessiere mich für: ${detail.title}`,
-      `Anliegen: ${interest}`,
-      `Name: ${name}`,
-      `E-Mail: ${email}`,
-      `Rolle: ${role}`,
+      `${dict["form.mailInterested"]} ${detail.title}`,
+      `${dict["form.mailRequest"]} ${interest}`,
+      `${dict["form.mailName"]} ${name}`,
+      `${dict["form.mailEmail"]} ${email}`,
+      `${dict["form.mailRole"]} ${role}`,
       "",
-      "Kurzbeschreibung:",
+      dict["form.mailDescription"],
       message,
       "",
-      "Bitte kontaktieren Sie mich für ein Erstgespräch.",
+      dict["form.mailContact"],
       "",
-      "Viele Grüße"
+      dict["form.mailClosing"]
     ].join("\n");
     window.location.href = `mailto:info@gss-consulting.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });

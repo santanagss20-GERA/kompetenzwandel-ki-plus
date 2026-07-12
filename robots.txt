@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kompetenzwandel-ki-plus.gss-consulting.de/sitemap.xml
