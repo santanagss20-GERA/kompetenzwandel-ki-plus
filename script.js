@@ -3,7 +3,7 @@ const SOCIAL_URLS = {
   instagram: "https://www.instagram.com/gss_consulting/"
 };
 
-const WHATSAPP_URL = "";
+const WHATSAPP_URL = "https://wa.me/4917632428387";
 
 if ("scrollRestoration" in history && document.querySelector(".module-page-main") && !window.location.hash) {
   history.scrollRestoration = "manual";
@@ -109,7 +109,7 @@ const translations = {
     "impact.i3t": "Für Frankfurt",
     "impact.i3": "Das Modell nutzt vorhandenes Fachkräftepotenzial vor Ort, stärkt berufliche Integration und verbindet soziale Teilhabe mit Innovation, Digitalisierung und nachhaltiger Arbeitsmarktentwicklung.",
     "contact.eyebrow": "Interesse & Zugang",
-    "contact.title": "Interesse an KompetenzWandel KI+?",
+    "contact.title": "Interesse an <span class=\"brand-nowrap\">KompetenzWandel KI+</span>?",
     "contact.text": "Für ein erstes Gespräch, eine Förderberatung oder eine Vormerkung zur Teilnahme können Sie direkt Kontakt aufnehmen.",
     "contact.panelTitle": "Kostenloses Erstgespräch",
     "contact.panelText": "Schreiben Sie kurz, ob Sie als teilnehmende Person, Unternehmen oder Kooperationskontakt Interesse haben. Im kostenlosen Erstgespräch klären wir Ausgangssituation, passende nächste Schritte und mögliche Zugänge über Förderung (AVGS oder Bildungsgutschein) oder Selbstzahlung.",
@@ -319,7 +319,7 @@ const translations = {
     "impact.i3t": "For Frankfurt",
     "impact.i3": "The model uses existing skilled-worker potential locally, strengthens professional integration and connects social participation with innovation, digitalization and sustainable labor-market development.",
     "contact.eyebrow": "Interest & access",
-    "contact.title": "Interested in KompetenzWandel KI+?",
+    "contact.title": "Interested in <span class=\"brand-nowrap\">KompetenzWandel KI+</span>?",
     "contact.text": "For a first conversation, funding consultation or participation reservation, you can contact us directly.",
     "contact.panelTitle": "Free first consultation",
     "contact.panelText": "Send a short note saying whether you are interested as a participant, company or cooperation contact. In the free first consultation, we clarify the starting point, suitable next steps and possible access through funding (AVGS or Bildungsgutschein) or self-payment.",
@@ -529,7 +529,7 @@ const translations = {
     "impact.i3t": "Para Frankfurt",
     "impact.i3": "El modelo aprovecha potencial cualificado ya existente en el territorio, fortalece integración profesional y conecta participación social con innovación, digitalización y desarrollo laboral sostenible.",
     "contact.eyebrow": "Interés y acceso",
-    "contact.title": "¿Interés en KompetenzWandel KI+?",
+    "contact.title": "¿Interés en <span class=\"brand-nowrap\">KompetenzWandel KI+</span>?",
     "contact.text": "Para una primera conversación, asesoría sobre financiación o una reserva de participación, puedes contactar directamente.",
     "contact.panelTitle": "Primera conversación gratuita",
     "contact.panelText": "Envía un mensaje breve indicando si te interesa como participante, empresa o contacto de cooperación. En la primera conversación gratuita revisamos la situación inicial, los próximos pasos adecuados y posibles accesos mediante financiación (AVGS o Bildungsgutschein) o pago propio.",

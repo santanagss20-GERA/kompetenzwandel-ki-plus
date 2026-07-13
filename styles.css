@@ -399,6 +399,9 @@ li + li { margin-top: 8px; }
   white-space: nowrap;
 }
 .hero h1 span { color: var(--blue); }
+.brand-nowrap {
+  white-space: nowrap;
+}
 .lead {
   max-width: 760px;
   color: var(--deep);
@@ -1700,12 +1703,14 @@ footer {
     padding: 30px 0 52px;
   }
   .hero h1 {
-    max-width: 100%;
-    font-size: clamp(1.92rem, 8vw, 2.35rem);
+    max-width: calc(100vw - 34px);
+    gap: .12em;
+    font-size: clamp(1.72rem, 7.05vw, 2.05rem);
     line-height: 1.02;
     overflow-wrap: normal;
     word-break: normal;
     hyphens: none;
+    overflow: visible;
   }
   .hero h1 span { white-space: nowrap; }
   .lead {
@@ -1816,7 +1821,7 @@ footer {
     min-height: 32px;
   }
   .hero h1 {
-    font-size: 2.22rem;
+    font-size: clamp(1.62rem, 7.05vw, 1.95rem);
     line-height: 1.02;
   }
   .lead { font-size: 1.22rem; }
@@ -1856,6 +1861,7 @@ footer {
   }
   .contact h2 {
     white-space: normal;
+    font-size: clamp(1.55rem, 6.8vw, 1.9rem);
   }
   .contact-panel .actions { display: grid; }
   .application-form { padding: 22px; }
@@ -1868,7 +1874,7 @@ footer {
     width: 146px;
     height: 42px;
   }
-  .hero h1 { font-size: clamp(1.72rem, 7.8vw, 1.92rem); }
+  .hero h1 { font-size: clamp(1.55rem, 7.05vw, 1.72rem); }
   .lead { font-size: 1.12rem; }
   .hero-text,
   .hero-subtext {
