@@ -1192,6 +1192,8 @@ document.querySelectorAll("[data-contact='whatsapp']").forEach((link) => {
     link.href = WHATSAPP_URL;
     link.target = "_blank";
     link.rel = "noopener";
+    link.removeAttribute("aria-disabled");
+    link.removeAttribute("title");
   } else {
     link.setAttribute("aria-disabled", "true");
     link.title = "WhatsApp-Link wird nach Freigabe der Nummer aktiviert.";
