@@ -155,6 +155,7 @@ const translations = {
     "footer.voucher": "Bildungsgutschein klären",
     "footer.email": "info@gss-consulting.de",
     "footer.website": "GSS Website",
+    "website.notice": "Die GSS Website ist derzeit in Bearbeitung. Diese Projektseite bleibt der aktuelle Zugang zu KompetenzWandel KI+.",
     "footer.imprint": "Impressum",
     "footer.privacy": "Datenschutz",
     "footer.linkedin": "LinkedIn",
@@ -365,6 +366,7 @@ const translations = {
     "footer.voucher": "Clarify Bildungsgutschein",
     "footer.email": "info@gss-consulting.de",
     "footer.website": "GSS website",
+    "website.notice": "The GSS website is currently under construction. This project page remains the current access point for KompetenzWandel KI+.",
     "footer.imprint": "Legal notice",
     "footer.privacy": "Privacy",
     "footer.linkedin": "LinkedIn",
@@ -575,6 +577,7 @@ const translations = {
     "footer.voucher": "Revisar Bildungsgutschein",
     "footer.email": "info@gss-consulting.de",
     "footer.website": "Sitio web de GSS",
+    "website.notice": "El sitio web de GSS está actualmente en construcción. Esta página de proyecto sigue siendo el acceso actual a KompetenzWandel KI+.",
     "footer.imprint": "Aviso legal",
     "footer.privacy": "Protección de datos",
     "footer.linkedin": "LinkedIn",
@@ -982,9 +985,28 @@ function anchorOffset(id) {
 
 function anchorElement(id, target) {
   if (id === "module") return target.querySelector(".section-head") || target;
+  if (id === "umsetzung") return target.querySelector(".implementation-grid") || target;
+  if (id === "profil") return target.querySelector(".profile-grid") || target;
+  if (id === "hinweise") return target.querySelector(".legal-summary-layout") || target;
+  if (id === "formular") return target.querySelector(".form-grid") || target;
   if (id === "qualitaet") return target.querySelector(".azav-grid") || target;
   if (id === "kontakt") return target.querySelector(".contact-grid") || target;
   return target;
+}
+
+function shouldCenterAnchor(id) {
+  return ["module", "umsetzung", "profil", "hinweise", "formular"].includes(id);
+}
+
+function centeredAnchorY(element) {
+  const header = headerOffset();
+  const rect = element.getBoundingClientRect();
+  const availableHeight = window.innerHeight - header - 24;
+  const absoluteTop = window.scrollY + rect.top;
+  if (rect.height <= availableHeight) {
+    return absoluteTop - header - Math.max(0, (availableHeight - rect.height) / 2);
+  }
+  return absoluteTop - header + 8;
 }
 
 function samePageHash(href) {
@@ -1001,7 +1023,9 @@ function scrollToHashTarget(hash, behavior = "auto") {
   const target = document.getElementById(id);
   if (!target) return false;
   const scrollTarget = anchorElement(id, target);
-  const y = window.scrollY + scrollTarget.getBoundingClientRect().top - anchorOffset(id);
+  const y = shouldCenterAnchor(id)
+    ? centeredAnchorY(scrollTarget)
+    : window.scrollY + scrollTarget.getBoundingClientRect().top - anchorOffset(id);
   window.scrollTo({ top: Math.max(0, y), behavior });
   return true;
 }
@@ -1050,45 +1074,45 @@ if (document.readyState === "loading") {
 window.addEventListener("load", settleHashScroll);
 window.addEventListener("resize", updateModuleCarouselDistance);
 
-const SITE_SEARCH_INDEX = {
+const SEARCH_ENTRY_BLUEPRINTS = {
   de: [
-    { title: "Startseite", text: "KompetenzWandel KI+ GSS Zukunftskompetenz Frankfurt", url: "index.html" },
-    { title: "Leistung", text: "berufliche Substanz sichtbar machen Upgrade Zukunftskompetenz Kompetenzen", url: "index.html#angebot" },
-    { title: "Module", text: "KompetenzScan BasisPass Digitalisierung KI PraxisProfil Wandelpfad moderne Bewerbungsstrategien", url: "index.html#module" },
-    { title: "Umsetzung", text: "Impact Praxis Brücke Anerkennung Weiterbildung Frankfurt", url: "index.html#umsetzung" },
-    { title: "Förderung", text: "AZAV § 45 SGB III AVGS Förderung Beschäftigung Gründung", url: "index.html#qualitaet" },
-    { title: "Profil", text: "Gründerinnenprofil Geraldine Sepúlveda Santana Coaching Beratung Dozentin", url: "index.html#profil" },
-    { title: "Kontakt", text: "Kostenloses Erstgespräch E-Mail Beratung Förderung", url: "index.html#kontakt" },
-    { title: "KompetenzScan", text: "Kompetenzfeststellung Profil Stärken Qualifizierung Praxis", url: "modul.html?mod=scan" },
-    { title: "BasisPass Digitalisierung & KI", text: "DigitalisierungsPass KI-GrundlagenPass Datenschutz Tools", url: "modul.html?mod=basis" },
-    { title: "PraxisProfil & Wandelpfad", text: "Praxisformate Brückenfunktionen Spezialisierung Anschlussschritte Transformation", url: "modul.html?mod=praxis" },
-    { title: "Rechtliches", text: "Impressum Datenschutz KI Verantwortung Anerkennung", url: "legal.html" }
+    { title: "Startseite", text: "KompetenzWandel KI+ GSS Zukunftskompetenz Frankfurt Kompetenz-Upgrade migrantische und internationale Berufsbiografien", url: "index.html", priority: 4 },
+    { title: "Leistung", text: "berufliche Substanz sichtbar machen Upgrade Zukunftskompetenz Kompetenzen Wissen Qualifikationen Digitalisierungsgrundlagen KI Fachsprache Arbeitsmarktwissen", url: "index.html#angebot", priority: 8 },
+    { title: "Module", text: "KompetenzScan BasisPass Digitalisierung KI PraxisProfil Wandelpfad moderne Bewerbungsstrategien 80 UE Programm Anmeldung Beratung", url: "index.html#module", priority: 7 },
+    { title: "Praxis", text: "Brücke in die Praxis Praxisaufgaben Projektarbeit Hospitation Praktikum Praxislabore Kompetenzen nutzen Anerkennung Weiterbildung Spezialisierung Beschäftigung Selbständigkeit", url: "index.html#umsetzung", priority: 10 },
+    { title: "Impact", text: "Impact Frankfurt Standortvorteil migrantische internationale Berufsbiografien Fachkräfte Zukunftskompetenz Resilienz Nachhaltigkeit berufliche Transformation", url: "index.html#umsetzung", priority: 10 },
+    { title: "Förderung", text: "AZAV Zertifizierung § 45 SGB III § 81 SGB III AVGS Bildungsgutschein Förderung Förderberatung Aktivierung berufliche Eingliederung Weiterbildung", url: "index.html#qualitaet", priority: 12 },
+    { title: "Profil", text: "Gründerinnenprofil Geraldine Sepúlveda Santana Klaus Schmidt Team Coaching Beratung Dozentin Sprach- und Kulturvermittlerin Integrationsarbeit", url: "index.html#profil", priority: 7 },
+    { title: "Hinweise", text: "Datenschutz Anerkennungsrahmen KI Verantwortung rechtlicher Rahmen Biografien schützen Anerkennung sauber einordnen", url: "index.html#hinweise", priority: 7 },
+    { title: "Kontakt", text: "Kostenloses Erstgespräch WhatsApp E-Mail Beratung Förderung Vormerkung Teilnahme Unternehmen Kooperationskontakt", url: "index.html#kontakt", priority: 13 },
+    { title: "Anmeldung & Beratung", text: "Anmeldung Beratung Erstgespräch Förderberatung Formular Anfrage starten Anliegen Teilnehmende Person Unternehmen Kooperationskontakt AVGS Bildungsgutschein Selbstzahlung E-Mail vorbereiten Kurzbeschreibung", url: "modul.html?mod=scan#formular", priority: 14 },
+    { title: "Rechtliches", text: "Impressum Datenschutz Anbieterkennzeichnung GSS Management Consulting Hanauer Landstraße USt-IdNr.", url: "legal.html", priority: 5 }
   ],
   en: [
-    { title: "Home", text: "KompetenzWandel KI+ GSS future-ready competence Frankfurt", url: "index.html" },
-    { title: "Service", text: "make professional substance visible upgrade future-ready competence competencies", url: "index.html#angebot" },
-    { title: "Modules", text: "Competence Scan BasisPass Digitalization AI Practice Profile Change Path modern application strategies", url: "index.html#module" },
-    { title: "Implementation", text: "impact practice bridge recognition training Frankfurt", url: "index.html#umsetzung" },
-    { title: "Funding", text: "AZAV § 45 SGB III AVGS funding employment self-employment", url: "index.html#qualitaet" },
-    { title: "Profile", text: "founder Geraldine Sepúlveda Santana coaching consulting lecturer", url: "index.html#profil" },
-    { title: "Contact", text: "free first consultation email funding consultation", url: "index.html#kontakt" },
-    { title: "Competence Scan", text: "competence assessment profile strengths qualification practice", url: "modul.html?mod=scan" },
-    { title: "BasisPass Digitalization & AI", text: "Digitalization Pass AI Foundations data protection tools modern application strategies", url: "modul.html?mod=basis" },
-    { title: "Practice Profile & Change Path", text: "practice formats bridge functions specialization transformation next steps", url: "modul.html?mod=praxis" },
-    { title: "Legal information", text: "legal notice privacy AI responsibility recognition", url: "legal.html" }
+    { title: "Home", text: "KompetenzWandel KI+ GSS future-ready competence Frankfurt competence upgrade migrant and international professional biographies", url: "index.html", priority: 4 },
+    { title: "Service", text: "make professional substance visible upgrade competencies knowledge qualifications digital foundations AI professional language labour market knowledge", url: "index.html#angebot", priority: 8 },
+    { title: "Modules", text: "Competence Scan BasisPass Digitalization AI Practice Profile Change Path modern application strategies 80 training units application consultation", url: "index.html#module", priority: 7 },
+    { title: "Practice", text: "Praxis bridge into practice practice tasks project work shadowing internships practice labs use competencies recognition training specialization employment self-employment", url: "index.html#umsetzung", priority: 10 },
+    { title: "Impact", text: "Impact impact Frankfurt location advantage migrant international professional biographies skilled workers future-ready competence resilience sustainability professional transformation", url: "index.html#umsetzung", priority: 10 },
+    { title: "Funding", text: "AZAV certification § 45 SGB III § 81 SGB III AVGS Bildungsgutschein funding consultation activation professional integration vocational training", url: "index.html#qualitaet", priority: 12 },
+    { title: "Profile", text: "founder profile Geraldine Sepúlveda Santana Klaus Schmidt team coaching consulting lecturer language and culture mediation integration work", url: "index.html#profil", priority: 7 },
+    { title: "Notes", text: "privacy recognition framework AI responsibility legal framework protecting biographies responsible AI", url: "index.html#hinweise", priority: 7 },
+    { title: "Contact", text: "free first consultation WhatsApp email consultation funding registration participant company cooperation contact", url: "index.html#kontakt", priority: 13 },
+    { title: "Application & consultation", text: "application consultation Anmeldung Beratung Förderberatung first consultation funding consultation form start request participant company cooperation contact AVGS Bildungsgutschein self-payment email short description", url: "modul.html?mod=scan#formular", priority: 14 },
+    { title: "Legal information", text: "legal notice privacy provider information GSS Management Consulting Hanauer Landstraße VAT ID", url: "legal.html", priority: 5 }
   ],
   es: [
-    { title: "Página principal", text: "KompetenzWandel KI+ GSS competencias de futuro Frankfurt", url: "index.html" },
-    { title: "Servicio", text: "hacer visible sustancia profesional upgrade competencias de futuro", url: "index.html#angebot" },
-    { title: "Módulos", text: "Escaneo Competencias BasisPass digitalización IA Perfil Práctico ruta cambio estrategias modernas candidatura", url: "index.html#module" },
-    { title: "Implementación", text: "impacto práctica puente reconocimiento formación Frankfurt", url: "index.html#umsetzung" },
-    { title: "Financiación", text: "AZAV § 45 SGB III AVGS financiación empleo autoempleo", url: "index.html#qualitaet" },
-    { title: "Perfil", text: "fundadora Geraldine Sepúlveda Santana coaching consultora docente", url: "index.html#profil" },
-    { title: "Contacto", text: "primera conversación gratuita correo asesoría financiación", url: "index.html#kontakt" },
-    { title: "Escaneo de Competencias", text: "detección competencias perfil fortalezas cualificación práctica", url: "modul.html?mod=scan" },
-    { title: "BasisPass Digitalización e IA", text: "pase digitalización fundamentos IA protección datos herramientas estrategias modernas candidatura", url: "modul.html?mod=basis" },
-    { title: "Perfil Práctico y Ruta de Cambio", text: "formatos práctica funciones puente especialización transformación próximos pasos", url: "modul.html?mod=praxis" },
-    { title: "Información legal", text: "aviso legal protección datos responsabilidad IA reconocimiento", url: "legal.html" }
+    { title: "Página principal", text: "KompetenzWandel KI+ GSS competencias de futuro Frankfurt upgrade de competencias biografías profesionales migrantes e internacionales", url: "index.html", priority: 4 },
+    { title: "Servicio", text: "hacer visible sustancia profesional upgrade competencias conocimientos cualificaciones base digital IA lenguaje profesional conocimiento del mercado laboral", url: "index.html#angebot", priority: 8 },
+    { title: "Módulos", text: "Escaneo de Competencias BasisPass digitalización IA Perfil Práctico Ruta de Cambio estrategias modernas de candidatura programa 80 UE inscripción asesoría", url: "index.html#module", priority: 7 },
+    { title: "Práctica", text: "Praxis puente hacia la práctica tareas prácticas proyectos hospitaciones prácticas laboratorios de práctica utilizar competencias reconocimiento formación especialización empleo autoempleo", url: "index.html#umsetzung", priority: 10 },
+    { title: "Impacto", text: "Impact impacto Frankfurt ventaja local biografías profesionales migrantes internacionales talento competencias de futuro resiliencia sostenibilidad transformación profesional", url: "index.html#umsetzung", priority: 10 },
+    { title: "Financiación", text: "certificación AZAV § 45 SGB III § 81 SGB III AVGS Bildungsgutschein financiación asesoría activación integración profesional formación continua", url: "index.html#qualitaet", priority: 12 },
+    { title: "Perfil", text: "perfil de la fundadora Geraldine Sepúlveda Santana Klaus Schmidt equipo coaching consultoría docente mediación lingüística y cultural trabajo de integración", url: "index.html#profil", priority: 7 },
+    { title: "Notas", text: "protección de datos marco de reconocimiento responsabilidad IA marco legal proteger biografías uso responsable de IA", url: "index.html#hinweise", priority: 7 },
+    { title: "Contacto", text: "primera conversación gratuita WhatsApp correo asesoría financiación inscripción participante empresa contacto de cooperación", url: "index.html#kontakt", priority: 13 },
+    { title: "Inscripción y asesoría", text: "inscripción asesoría Anmeldung Beratung Förderberatung primera conversación asesoría de financiación formulario iniciar solicitud participante empresa contacto de cooperación AVGS Bildungsgutschein pago propio correo descripción breve", url: "modul.html?mod=scan#formular", priority: 14 },
+    { title: "Información legal", text: "aviso legal protección de datos entidad responsable GSS Management Consulting Hanauer Landstraße NIF IVA", url: "legal.html", priority: 5 }
   ]
 };
 
@@ -1112,6 +1136,130 @@ function searchLabels() {
   }[getActiveLang()];
 }
 
+function escapeHtml(value) {
+  return String(value || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function compactText(value) {
+  return String(value || "").replace(/\s+/g, " ").trim();
+}
+
+function currentPageFile() {
+  return window.location.pathname.split("/").pop() || "index.html";
+}
+
+function currentPageUrl(id = "") {
+  const file = currentPageFile();
+  const search = file === "modul.html" ? window.location.search : "";
+  return `${file}${search}${id ? `#${id}` : ""}`;
+}
+
+function titleFromBlock(block) {
+  const titleElement = block.querySelector("h1, h2, h3, .eyebrow, .lead, .lead-small");
+  return compactText(titleElement?.textContent || block.getAttribute("aria-label") || document.title || currentPageFile());
+}
+
+function searchableTextFromBlock(block) {
+  const clone = block.cloneNode(true);
+  clone.querySelectorAll("script, style, noscript, .site-search, .search-panel, .module-card-clone, [aria-hidden='true']").forEach((item) => item.remove());
+  const attributeText = Array.from(block.querySelectorAll("[placeholder], [aria-label], [title], img[alt], option"))
+    .map((item) => [item.getAttribute("placeholder"), item.getAttribute("aria-label"), item.getAttribute("title"), item.getAttribute("alt"), item.textContent].filter(Boolean).join(" "))
+    .join(" ");
+  return compactText(`${clone.textContent || ""} ${attributeText}`);
+}
+
+function buildDomSearchEntries() {
+  const candidates = [
+    ...document.querySelectorAll("main > section, .module-detail-hero, .module-detail-body, .form-section, .legal-page-head, .legal-section, footer")
+  ];
+  const seen = new Set();
+  return candidates
+    .filter((block) => {
+      if (!block || seen.has(block)) return false;
+      seen.add(block);
+      return true;
+    })
+    .map((block) => {
+      const section = block.id ? block : block.closest("section[id]");
+      const id = section?.id || "";
+      const title = titleFromBlock(block);
+      const text = searchableTextFromBlock(block);
+      if (!text) return null;
+      return { title, text, url: currentPageUrl(id), priority: 3 };
+    })
+    .filter(Boolean);
+}
+
+function buildModuleSearchEntries(lang) {
+  const dict = translations[lang] || translations.de;
+  const details = moduleDetails[lang] || moduleDetails.de;
+  return Object.entries(details).map(([key, detail]) => ({
+    title: detail.title,
+    text: compactText([
+      detail.kicker,
+      detail.description,
+      detail.duration,
+      ...(detail.includes || []),
+      detail.outcome,
+      detail.access,
+      dict["modules.more"],
+      dict["modulePage.primary"],
+      dict["form.eyebrow"],
+      dict["form.title"],
+      dict["form.optionCall"],
+      dict["form.optionRegister"],
+      dict["form.optionFunding"],
+      "Anmeldung Beratung Application consultation inscripción asesoría"
+    ].join(" ")),
+    url: `modul.html?mod=${key}`,
+    priority: 7
+  }));
+}
+
+function buildSearchIndex(lang) {
+  const index = [
+    ...(SEARCH_ENTRY_BLUEPRINTS[lang] || SEARCH_ENTRY_BLUEPRINTS.de),
+    ...buildModuleSearchEntries(lang),
+    ...buildDomSearchEntries()
+  ];
+  const merged = new Map();
+  index.forEach((item) => {
+    const key = `${item.url}|${normalizeText(item.title)}`;
+    const previous = merged.get(key);
+    if (previous) {
+      previous.text = compactText(`${previous.text} ${item.text}`);
+      previous.priority = Math.max(previous.priority || 0, item.priority || 0);
+    } else {
+      merged.set(key, { ...item, text: compactText(item.text) });
+    }
+  });
+  return Array.from(merged.values());
+}
+
+function scoreSearchItem(item, words, phrase) {
+  const title = normalizeText(item.title);
+  const text = normalizeText(item.text);
+  const url = normalizeText(item.url);
+  let score = 0;
+  if (title === phrase) score += 180;
+  if (title.includes(phrase)) score += 120;
+  if (text.includes(phrase)) score += 30;
+  words.forEach((word) => {
+    if (!word) return;
+    if (title.split(/\s+/).some((part) => part.startsWith(word))) score += 55;
+    else if (title.includes(word)) score += 42;
+    if (text.split(/\s+/).some((part) => part.startsWith(word))) score += 16;
+    else if (text.includes(word)) score += 9;
+    if (url.includes(word)) score += 4;
+  });
+  return score > 0 ? score + (item.priority || 0) : 0;
+}
+
 function renderSearchResults(root, query) {
   const results = root.querySelector(".search-results");
   if (!results) return;
@@ -1122,20 +1270,22 @@ function renderSearchResults(root, query) {
     return;
   }
   const words = q.split(/\s+/).filter(Boolean);
-  const found = (SITE_SEARCH_INDEX[getActiveLang()] || SITE_SEARCH_INDEX.de)
+  const found = buildSearchIndex(getActiveLang())
     .map((item) => {
-      const haystack = normalizeText(`${item.title} ${item.text}`);
-      const score = words.reduce((sum, word) => sum + (haystack.includes(word) ? 1 : 0), 0);
+      const score = scoreSearchItem(item, words, q);
       return { ...item, score };
     })
     .filter((item) => item.score > 0)
-    .sort((a, b) => b.score - a.score)
+    .sort((a, b) => b.score - a.score || (b.priority || 0) - (a.priority || 0))
     .slice(0, 8);
   if (!found.length) {
     results.innerHTML = `<p>${labels.empty}</p>`;
     return;
   }
-  results.innerHTML = found.map((item) => `<a class="search-result" role="option" href="${item.url}"><strong>${item.title}</strong><span>${labels.section}: ${item.text.split(" ").slice(0, 8).join(" ")}...</span></a>`).join("");
+  results.innerHTML = found.map((item) => {
+    const excerpt = compactText(item.text).split(" ").slice(0, 12).join(" ");
+    return `<a class="search-result" role="option" href="${escapeHtml(item.url)}"><strong>${escapeHtml(item.title)}</strong><span>${escapeHtml(labels.section)}: ${escapeHtml(excerpt)}...</span></a>`;
+  }).join("");
 }
 
 function setupSiteSearch() {
@@ -1199,6 +1349,37 @@ document.querySelectorAll("[data-contact='whatsapp']").forEach((link) => {
     link.title = "WhatsApp-Link wird nach Freigabe der Nummer aktiviert.";
     link.addEventListener("click", (event) => event.preventDefault());
   }
+});
+
+let websiteNoticeTimer;
+function showWebsiteNotice() {
+  const dict = translations[getActiveLang()] || translations.de;
+  let toast = document.querySelector(".site-toast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.className = "site-toast";
+    toast.setAttribute("role", "status");
+    toast.setAttribute("aria-live", "polite");
+    document.body.appendChild(toast);
+  }
+  toast.textContent = dict["website.notice"] || translations.de["website.notice"];
+  toast.classList.add("is-visible");
+  window.clearTimeout(websiteNoticeTimer);
+  websiteNoticeTimer = window.setTimeout(() => {
+    toast.classList.remove("is-visible");
+  }, 4200);
+}
+
+document.querySelectorAll("[data-website-notice]").forEach((trigger) => {
+  trigger.addEventListener("click", (event) => {
+    event.preventDefault();
+    showWebsiteNotice();
+  });
+  trigger.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    showWebsiteNotice();
+  });
 });
 
 const year = document.querySelector("#year");
