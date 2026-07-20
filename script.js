@@ -806,7 +806,6 @@ function renderModuleDetail(lang) {
   if (outcome) outcome.textContent = detail.outcome;
   if (access) access.textContent = detail.access;
   if (visual) visual.className = `detail-visual ${detail.visualClass}`;
-  document.title = `${detail.title} | KompetenzWandel KI+`;
 }
 
 function updateModuleCarouselDistance() {
@@ -894,6 +893,204 @@ function setupModuleCarousel() {
   window.requestAnimationFrame(updateModuleCarouselDistance);
 }
 
+const SEO_BASE_URL = "https://kompetenzwandel-ki-plus.gss-consulting.de";
+const SEO_LOCALES = { de: "de_DE", en: "en_US", es: "es_ES" };
+
+const SEO_COPY = {
+  de: {
+    home: {
+      title: "KompetenzWandel KI+ | KI-gestütztes Kompetenz-Upgrade in Frankfurt",
+      description: "Frankfurter Modell von GSS: Erfahrung, Wissen und Kompetenzen mit Digitalisierung, KI, Fachsprache und Arbeitsmarktwissen weiterentwickeln.",
+      ogTitle: "KompetenzWandel KI+ | Upgrade statt Neustart",
+      ogDescription: "Migrantische und internationale Berufsbiografien sowie weitere berufliche Übergänge werden sichtbar, digital anschlussfähig und beruflich wirksam."
+    },
+    legal: {
+      title: "Impressum & Datenschutz | KompetenzWandel KI+ | GSS Management Consulting",
+      description: "Impressum, Datenschutz und rechtliche Hinweise zur Landingpage KompetenzWandel KI+ von GSS Management Consulting.",
+      ogTitle: "Impressum & Datenschutz | KompetenzWandel KI+",
+      ogDescription: "Rechtliche Informationen, Datenschutz und Anbieterkennzeichnung zur Projektseite KompetenzWandel KI+."
+    },
+    versions: {
+      title: "Versionen | KompetenzWandel KI+",
+      description: "Interne Versionen der Landingpage KompetenzWandel KI+.",
+      ogTitle: "Versionen | KompetenzWandel KI+",
+      ogDescription: "Interne Übersicht der Landingpage-Versionen."
+    },
+    moduleFallback: {
+      title: "Module | KompetenzWandel KI+ | KompetenzScan, BasisPass und Wandelpfad",
+      description: "Moduldetails zu KompetenzScan, BasisPass Digitalisierung & KI sowie PraxisProfil & Wandelpfad von GSS Management Consulting.",
+      ogTitle: "Module | KompetenzWandel KI+",
+      ogDescription: "Drei Bausteine für Kompetenz-Upgrade, digitale Basis und berufliche Transformation."
+    }
+  },
+  en: {
+    home: {
+      title: "KompetenzWandel KI+ | AI-supported competence upgrade in Frankfurt",
+      description: "A Frankfurt model by GSS: developing experience, knowledge and competencies with digitalization, AI, professional language and labor-market knowledge.",
+      ogTitle: "KompetenzWandel KI+ | Upgrade instead of restart",
+      ogDescription: "Migrant and international professional biographies, as well as other career transitions, become visible, digitally connectable and professionally effective."
+    },
+    legal: {
+      title: "Legal Notice & Privacy | KompetenzWandel KI+ | GSS Management Consulting",
+      description: "Legal notice, privacy information and legal notes for the KompetenzWandel KI+ landing page by GSS Management Consulting.",
+      ogTitle: "Legal Notice & Privacy | KompetenzWandel KI+",
+      ogDescription: "Legal information, privacy notes and provider information for the KompetenzWandel KI+ project page."
+    },
+    versions: {
+      title: "Versions | KompetenzWandel KI+",
+      description: "Internal versions of the KompetenzWandel KI+ landing page.",
+      ogTitle: "Versions | KompetenzWandel KI+",
+      ogDescription: "Internal overview of landing page versions."
+    },
+    moduleFallback: {
+      title: "Modules | KompetenzWandel KI+ | Competence Scan, BasisPass and Change Path",
+      description: "Module details for Competence Scan, BasisPass Digitalization & AI and Practice Profile & Change Path by GSS Management Consulting.",
+      ogTitle: "Modules | KompetenzWandel KI+",
+      ogDescription: "Three building blocks for competence upgrade, digital foundations and professional transformation."
+    }
+  },
+  es: {
+    home: {
+      title: "KompetenzWandel KI+ | Upgrade de competencias con IA en Frankfurt",
+      description: "Modelo de GSS en Frankfurt: desarrolla experiencia, conocimientos y competencias con digitalización, IA y conocimiento del mercado laboral.",
+      ogTitle: "KompetenzWandel KI+ | Upgrade en lugar de empezar de cero",
+      ogDescription: "Biografías profesionales migrantes e internacionales, así como otras transiciones laborales, se vuelven visibles, conectables digitalmente y profesionalmente efectivas."
+    },
+    legal: {
+      title: "Aviso legal y protección de datos | KompetenzWandel KI+ | GSS Management Consulting",
+      description: "Aviso legal, protección de datos e información jurídica sobre la landing page KompetenzWandel KI+ de GSS Management Consulting.",
+      ogTitle: "Aviso legal y protección de datos | KompetenzWandel KI+",
+      ogDescription: "Información legal, protección de datos y datos de la entidad responsable de la página de proyecto KompetenzWandel KI+."
+    },
+    versions: {
+      title: "Versiones | KompetenzWandel KI+",
+      description: "Versiones internas de la landing page KompetenzWandel KI+.",
+      ogTitle: "Versiones | KompetenzWandel KI+",
+      ogDescription: "Resumen interno de versiones de la landing page."
+    },
+    moduleFallback: {
+      title: "Módulos | KompetenzWandel KI+ | Escaneo, BasisPass y ruta de cambio",
+      description: "Detalles de los módulos Escaneo de Competencias, BasisPass Digitalización e IA y Perfil Práctico y Ruta de Cambio de GSS Management Consulting.",
+      ogTitle: "Módulos | KompetenzWandel KI+",
+      ogDescription: "Tres módulos para upgrade de competencias, base digital y transformación profesional."
+    }
+  }
+};
+
+function setMetaByName(name, content) {
+  if (!content) return;
+  let element = document.querySelector(`meta[name="${name}"]`);
+  if (!element) {
+    element = document.createElement("meta");
+    element.setAttribute("name", name);
+    document.head.appendChild(element);
+  }
+  element.setAttribute("content", content);
+}
+
+function setMetaByProperty(property, content) {
+  if (!content) return;
+  let element = document.querySelector(`meta[property="${property}"]`);
+  if (!element) {
+    element = document.createElement("meta");
+    element.setAttribute("property", property);
+    document.head.appendChild(element);
+  }
+  element.setAttribute("content", content);
+}
+
+function setCanonical(url) {
+  let element = document.querySelector('link[rel="canonical"]');
+  if (!element) {
+    element = document.createElement("link");
+    element.setAttribute("rel", "canonical");
+    document.head.appendChild(element);
+  }
+  element.setAttribute("href", url);
+}
+
+function setAlternateLinks(pageType, moduleKey) {
+  document.querySelectorAll('link[rel="alternate"][data-managed-seo]').forEach((element) => element.remove());
+  ["de", "en", "es"].forEach((lang) => {
+    const link = document.createElement("link");
+    link.setAttribute("rel", "alternate");
+    link.setAttribute("hreflang", lang);
+    link.setAttribute("href", languageUrl(lang, pageType, moduleKey));
+    link.setAttribute("data-managed-seo", "true");
+    document.head.appendChild(link);
+  });
+  const fallback = document.createElement("link");
+  fallback.setAttribute("rel", "alternate");
+  fallback.setAttribute("hreflang", "x-default");
+  fallback.setAttribute("href", languageUrl("de", pageType, moduleKey));
+  fallback.setAttribute("data-managed-seo", "true");
+  document.head.appendChild(fallback);
+}
+
+function pageType() {
+  const path = window.location.pathname;
+  if (path.endsWith("legal.html")) return "legal";
+  if (path.endsWith("versionen.html")) return "versions";
+  if (path.endsWith("modul.html")) return "module";
+  return "home";
+}
+
+function languageUrl(lang, type = pageType(), moduleKey = getModuleKey()) {
+  const params = new URLSearchParams();
+  params.set("lang", lang);
+  if (type === "module") {
+    params.set("mod", moduleKey);
+    return `${SEO_BASE_URL}/modul.html?${params.toString()}`;
+  }
+  if (type === "legal") return `${SEO_BASE_URL}/legal.html?${params.toString()}`;
+  if (type === "versions") return `${SEO_BASE_URL}/versionen.html?${params.toString()}`;
+  return `${SEO_BASE_URL}/?${params.toString()}`;
+}
+
+function syncBrowserLanguageUrl(lang) {
+  if (!window.history?.replaceState) return;
+  const url = new URL(window.location.href);
+  url.searchParams.set("lang", lang);
+  if (pageType() === "module") url.searchParams.set("mod", getModuleKey());
+  window.history.replaceState(null, "", url.toString());
+}
+
+function currentSeoProfile(lang) {
+  const type = pageType();
+  const copy = SEO_COPY[lang] || SEO_COPY.de;
+  if (type === "module") {
+    const detail = (moduleDetails[lang] || moduleDetails.de)[getModuleKey()];
+    if (!detail) return copy.moduleFallback;
+    return {
+      title: `${detail.title} | KompetenzWandel KI+`,
+      description: detail.description,
+      ogTitle: `${detail.title} | KompetenzWandel KI+`,
+      ogDescription: detail.kicker || detail.description
+    };
+  }
+  return copy[type] || copy.home;
+}
+
+function updateSeo(lang) {
+  const active = ["de", "en", "es"].includes(lang) ? lang : "de";
+  const type = pageType();
+  const moduleKey = getModuleKey();
+  const seo = currentSeoProfile(active);
+  const url = languageUrl(active, type, moduleKey);
+  document.title = seo.title;
+  document.documentElement.lang = active;
+  setCanonical(url);
+  setAlternateLinks(type, moduleKey);
+  setMetaByName("description", seo.description);
+  setMetaByName("twitter:title", seo.ogTitle || seo.title);
+  setMetaByName("twitter:description", seo.ogDescription || seo.description);
+  setMetaByProperty("og:title", seo.ogTitle || seo.title);
+  setMetaByProperty("og:description", seo.ogDescription || seo.description);
+  setMetaByProperty("og:url", url);
+  setMetaByProperty("og:locale", SEO_LOCALES[active] || SEO_LOCALES.de);
+  setMetaByProperty("og:image:alt", `${seo.ogTitle || seo.title} - GSS Management Consulting`);
+}
+
 function applyLanguage(lang) {
   const active = ["de", "en", "es"].includes(lang) ? lang : "de";
   const dict = translations[active];
@@ -916,35 +1113,8 @@ function applyLanguage(lang) {
   });
   renderModuleDetail(active);
   setupModuleCarousel();
-  const titles = {
-    de: "KompetenzWandel KI+ | KI-gestütztes Kompetenz-Upgrade in Frankfurt",
-    en: "KompetenzWandel KI+ | AI-supported competence upgrade in Frankfurt",
-    es: "KompetenzWandel KI+ | Upgrade de competencias con IA en Frankfurt"
-  };
-  const moduleTitles = {
-    de: "Module | KompetenzWandel KI+ | KompetenzScan, BasisPass und Wandelpfad",
-    en: "Modules | KompetenzWandel KI+ | Competence Scan, BasisPass and Change Path",
-    es: "Módulos | KompetenzWandel KI+ | Escaneo, BasisPass y ruta de cambio"
-  };
-  const legalTitles = {
-    de: "Impressum & Datenschutz | KompetenzWandel KI+ | GSS Management Consulting",
-    en: "Legal Notice & Privacy | KompetenzWandel KI+ | GSS Management Consulting",
-    es: "Aviso legal y protección de datos | KompetenzWandel KI+ | GSS Management Consulting"
-  };
-  const versionTitles = {
-    de: "Versionen | KompetenzWandel KI+",
-    en: "Versions | KompetenzWandel KI+",
-    es: "Versiones | KompetenzWandel KI+"
-  };
-  if (window.location.pathname.endsWith("legal.html")) {
-    document.title = legalTitles[active];
-  } else if (window.location.pathname.endsWith("versionen.html")) {
-    document.title = versionTitles[active];
-  } else if (document.querySelector(".module-page-main")) {
-    document.title = moduleTitles[active];
-  } else if (!document.querySelector(".module-page-main")) {
-    document.title = titles[active];
-  }
+  syncBrowserLanguageUrl(active);
+  updateSeo(active);
 }
 
 const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
