@@ -45,8 +45,8 @@ const translations = {
     "intro.p3": "So entsteht Orientierung: Welche Kompetenzen sind bereits nutzbar? Welche digitale, sprachliche oder fachliche Basis sollte ergänzt werden? Und welcher nächste Anschluss passt: Weiterbildung, Spezialisierung, Beschäftigung oder eine passende Selbständigkeit?",
     "intro.p4": "Zukunftskompetenz bedeutet hier nicht nur Technik. Es geht auch um Lernfähigkeit, Resilienz, nachhaltiges Arbeiten, digitale Souveränität und die Fähigkeit, vorhandenes Fachwissen in berufliche Transformation zu übertragen.",
     "modules.eyebrow": "Leistungsstruktur",
-    "modules.title": "Drei Bausteine: erkennen, befähigen, beruflich wirksam machen.",
-    "modules.text": "Die drei Bausteine machen aus vorhandener beruflicher Substanz einen konkreten nächsten Schritt: sichtbar, digital anschlussfähig und beruflich wirksam.",
+    "modules.title": "Drei Kernmodule: erkennen, befähigen, beruflich wirksam machen.",
+    "modules.text": "Die drei grundlegenden Module bilden den 80-UE-Kernpfad. Einstieg und berufliches Upgrade ergänzen Wirkungslinie 1 nach Bedarf.",
     "m1.title": "KompetenzScan",
     "m1.text": "Der KompetenzScan macht sichtbar, welche Erfahrung, Kenntnisse und Kompetenzen bereits nutzbar sind, welche Anteile anerkannt, übertragbar oder entwickelbar sind und welcher nächste berufliche Anschluss realistisch ist.",
     "m1.li1": "Kompetenzprofil",
@@ -256,8 +256,8 @@ const translations = {
     "intro.p3": "This creates orientation: which competencies are already usable? Which digital, language-related or professional foundation should be added? And which next connection fits: further training, specialization, employment or suitable self-employment?",
     "intro.p4": "Future-ready competence does not mean technology alone. It also means learning ability, resilience, sustainable work, digital sovereignty and the ability to transfer existing professional knowledge into professional transformation.",
     "modules.eyebrow": "Service structure",
-    "modules.title": "Three building blocks: identify, enable and make professionally effective.",
-    "modules.text": "The three building blocks turn existing professional substance into a concrete next step: visible, digitally connectable and professionally effective.",
+    "modules.title": "Three core modules: identify, enable and put skills to work.",
+    "modules.text": "The three fundamental modules form the 80-unit core path. Entry and professional upgrade complement impact line 1 as needed.",
     "m1.title": "Competence Scan",
     "m1.text": "The Competence Scan makes visible which experience, knowledge and competencies are already usable, which parts are recognized, transferable or developable, and which next professional connection is realistic.",
     "m1.li1": "competence profile",
@@ -645,6 +645,74 @@ const translations = {
   }
 };
 
+// Product architecture is shared across all three language versions.
+Object.assign(translations.de, {
+  "cafe.languages":"Deutsch–Spanisch oder Deutsch–Englisch, abhängig von der Gruppe.",
+  "cafe.generations":"Generationenübergreifend: Medienerfahrung trifft Familien-, Arbeits- und Lebenserfahrung.",
+  "lines.oneText":"Vorhandene Erfahrungen, Kenntnisse und Kompetenzen werden sichtbar, verständlich und beruflich nutzbar. KompetenzScan, PraxisProfil und Wandelpfad verbinden sie mit realistischen Schritten in Weiterbildung, Spezialisierung, Beschäftigung, Praxis oder eine passende Selbständigkeit.",
+  "trust.modules":"Kernmodule","trust.path":"UE Kernprogramm","trust.note":"80 UE Programm: KompetenzScan, BasisPass Digitalisierung & KI sowie PraxisProfil & Wandelpfad verbinden Kompetenzfeststellung, Basisqualifizierung, berufliche Sichtbarkeit und Förderberatung.",
+  "modules.title":"Drei Kernmodule: erkennen, befähigen, beruflich wirksam machen.","modules.text":"Die drei Module machen aus vorhandener beruflicher Substanz einen konkreten nächsten Schritt: sichtbar, digital anschlussfähig und beruflich wirksam.","modules.measureNote":"80 UE Programm: KompetenzScan, BasisPass Digitalisierung & KI sowie PraxisProfil & Wandelpfad verbinden Kompetenzfeststellung, Basisqualifizierung, berufliche Sichtbarkeit und Förderberatung.",
+  "modules.extensionsEyebrow":"Individuelle Ergänzungen","modules.extensionsTitle":"Zwei ergänzende Module: Einstieg und Weiterentwicklung.","modules.extensionsText":"Beide Module können einzeln und mit individuell vereinbartem Umfang ergänzt werden. Sie unterstützen die Kernmodule, sind aber nicht Teil der 80 UE des Kernprogramms.",
+  "m3.number":"Ergänzungsmodul","m4.number":"Ergänzungsmodul",
+  "m3.imageAlt":"Bewerbungsgespräch mit einer Kandidatin und zwei Gesprächspartnern","m4.imageAlt":"Zwei Fachkräfte arbeiten gemeinsam mit Laptop und Tablet an digitalen Aufgaben",
+  "m2.title":"BasisPass Digitalisierung & KI","m2.text":"Der BasisPass schafft eine gemeinsame Grundlage in Digitalisierung, KI, Datenschutz, Recherche, Dokumentation, Kommunikation, Selbstmarketing, modernen Bewerbungsstrategien und berufsspezifischer Tool-Nutzung.",
+  "m3.title":"Einstieg und Anschluss","m3.text":"Praktikum, Ausbildung, Bewerbung und Berufseinstieg gezielt vorbereiten – zum Beispiel ‚Smart ins Praktikum‘. Umfang: nach Bedarf.",
+  "m4.title":"Berufliches Upgrade","m4.text":"Veränderte Tätigkeiten verstehen und Kompetenzen gezielt weiterentwickeln, etwa vom Marketing zum Digital Marketing. Umfang: nach Bedarf.",
+  "m5.title":"PraxisProfil & Wandelpfad","m5.text":"Das PraxisProfil übersetzt Scan und BasisPass in einen konkreten Wandelpfad: Kurzprofil, Portfolio oder Arbeitsprobe, Praxisaufgaben und Anschluss in Weiterbildung, Spezialisierung, Beschäftigung oder Gründung. So wird berufliche Transformation praktisch vorbereitet.",
+  "lines.oneImageAlt":"Menschen mit unterschiedlichen Berufen erarbeiten gemeinsam ein digitales Kompetenzprofil",
+  "lines.imageAlt":"Junge Menschen lernen gemeinsam mit einer Mentorin den sicheren Umgang mit digitalen Werkzeugen","cafe.imageAlt":"Menschen verschiedener Generationen tauschen sich beim Bilingual Digital Café+ über digitale Themen aus",
+  "nav.sovereignty":"Digitale Souveränität","nav.cafe":"Bilingual Digital Café+",
+  "lines.eyebrow":"Wirkung und berufliche Handlungsfähigkeit","lines.title":"Zwei Wirkungslinien. Ein gemeinsames Ziel: beruflich handlungsfähig bleiben.","lines.oneLabel":"Wirkungslinie 1","lines.oneTitle":"Zukunftskompetenzen und beruflicher KompetenzWandel","lines.twoLabel":"Wirkungslinie 2","lines.twoTitle":"Digitale Souveränität: sicher und selbstbestimmt handeln","lines.twoText":"Teilnehmende lernen, Datenschutz und digitale Identität zu schützen, KI sicher, kritisch und verantwortlich zu nutzen und Chancen, Grenzen, Fehler und Verzerrungen zu erkennen.","lines.topic1":"Informationen, Quellen und Fakten prüfen; Deepfakes und Desinformation erkennen.","lines.topic2":"Digitale Reputation und soziale Netzwerke bewusst gestalten.","lines.topic3":"Cybermobbing und Manipulation erkennen, Hilfswege kennen und digitale Resilienz entwickeln.",
+  "cafe.eyebrow":"Praxis- und Transferformat","cafe.title":"Bilingual Digital Café+","cafe.text":"Ein zugänglicher, zweisprachiger Praxisraum: digitale Werkzeuge und KI ausprobieren, Fragen stellen, Erfahrungen austauschen und konkrete Schritte für Schutz, Lernen und Handeln entwickeln. Das Café unterstützt den Transfer der beiden Wirkungslinien.","cafe.partnerNote":"ACUDA e. V. ist als Community- und Impactpartnerin für ausgewählte Formate vorgesehen. GSS verantwortet Produkt, Curriculum, Qualität und Umsetzung.","cafe.participantCta":"Kostenloses Erstgespräch anfragen","cafe.partnerCta":"Pilot- oder Kooperationspartner werden",
+  "profile.team":"Geraldine Sepúlveda Santana verantwortet als Inhaberin von GSS Management Consulting Produkt, Curriculum, Qualität, Markt und Skalierung von KompetenzWandel KI+. Klaus Schmidt wirkt in der strategischen Zusammenarbeit mit.",
+  "hero.badge2":"Qualität und Förderung","status.finalPhase":"AZAV: finale Prüfphase","azav.title":"Qualitätsmanagement (QMS) und AZAV-Zulassung","azav.text":"Das QMS von GSS ist implementiert. Die AZAV-Zulassung befindet sich in der finalen Prüfphase; sie ist noch nicht erteilt.","azav.note":"Die AZAV-Zulassung liegt noch nicht vor. Eine Förderung über AVGS oder Bildungsgutschein ist erst nach erfolgreicher Zulassung einer passenden Maßnahme und der Entscheidung des zuständigen Kostenträgers möglich.",
+  "form.roleEducation":"Bildungs- oder Umsetzungspartner","form.roleImpact":"Impact-/CSR-Partner","form.roleOther":"Sonstige Kooperation"
+});
+Object.assign(translations.en, {
+  "cafe.languages":"German–Spanish or German–English, depending on the group.",
+  "cafe.generations":"Across generations: media experience meets family, work and life experience.",
+  "lines.oneText":"Existing experience, knowledge and skills become visible, understandable and useful at work. KompetenzScan, PraxisProfil and Wandelpfad connect them with realistic next steps towards further training, specialisation, employment, practice or suitable self-employment.",
+  "trust.modules":"core modules","trust.path":"core training units","trust.note":"80 training-unit program: Competence Scan, BasisPass Digitalization & AI and Practice Profile & Change Path connect competence assessment, basic qualification, professional visibility and funding consultation.",
+  "modules.title":"Three core modules: recognise, enable and put skills to work.","modules.text":"The three modules turn existing professional substance into a concrete next step: visible, digitally connectable and professionally effective.","modules.measureNote":"80 training-unit program: Competence Scan, BasisPass Digitalization & AI and Practice Profile & Change Path connect competence assessment, basic qualification, professional visibility and funding consultation.",
+  "modules.extensionsEyebrow":"Individual additions","modules.extensionsTitle":"Two additional modules: entry and development.","modules.extensionsText":"Either module can be added separately with an individually agreed scope. They support the core modules but are not part of the 80-unit core programme.",
+  "m3.number":"Additional module","m4.number":"Additional module",
+  "m3.imageAlt":"Job interview with a candidate and two interviewers","m4.imageAlt":"Two professionals work together on digital tasks with a laptop and tablet",
+  "m2.title":"BasisPass Digitalization & AI","m2.text":"The BasisPass creates a shared foundation in digitalization, AI, data protection, research, documentation, communication, self-marketing, modern application strategies and profession-specific tool use.",
+  "m3.title":"Entry and Progression","m3.text":"Prepare for internships, vocational training, applications and entry into work – for example, ‘Smart into an Internship’. Duration: as needed.",
+  "m4.title":"Professional Upgrade","m4.text":"Understand changing roles and develop targeted skills, for example from marketing to digital marketing. Duration: as needed.",
+  "m5.title":"Practice Profile & Change Path","m5.text":"The Practice Profile translates the scan and BasisPass into a concrete change path: short profile, portfolio or work sample, practice tasks and connection to further training, specialization, employment or self-employment. This prepares professional transformation in practical terms.",
+  "lines.oneImageAlt":"People from different professions develop a digital competence profile together",
+  "lines.imageAlt":"Young people learn to use digital tools safely with a mentor","cafe.imageAlt":"People of different generations discuss digital topics at the Bilingual Digital Café+",
+  "nav.sovereignty":"Digital sovereignty","nav.cafe":"Bilingual Digital Café+",
+  "lines.eyebrow":"Impact and professional agency","lines.title":"Two impact lines. One shared goal: remain able to act professionally.","lines.oneLabel":"Impact line 1","lines.oneTitle":"Future skills and professional transformation","lines.twoLabel":"Impact line 2","lines.twoTitle":"Digital sovereignty: act safely and independently","lines.twoText":"Participants learn to protect personal data and digital identity, use AI safely, critically and responsibly, and recognise its opportunities, limits, errors and biases.","lines.topic1":"Check information, sources and facts; recognise deepfakes and disinformation.","lines.topic2":"Manage digital reputation and social media consciously.","lines.topic3":"Recognise cyberbullying and manipulation, know support routes and build digital resilience.",
+  "cafe.eyebrow":"Practice and transfer format","cafe.title":"Bilingual Digital Café+","cafe.text":"An accessible bilingual practice space to try digital and AI tools, ask questions, exchange experiences and develop concrete steps for protection, learning and action. The café helps transfer both impact lines into practice.","cafe.partnerNote":"ACUDA e. V. is envisaged as a community and impact partner for selected formats. GSS is responsible for the product, curriculum, quality and delivery.","cafe.participantCta":"Request a free initial consultation","cafe.partnerCta":"Become a pilot or cooperation partner",
+  "profile.team":"As owner of GSS Management Consulting, Geraldine Sepúlveda Santana is responsible for the KompetenzWandel KI+ product, curriculum, quality, market and scaling. Klaus Schmidt contributes through strategic collaboration.",
+  "hero.badge2":"Quality and funding","status.finalPhase":"AZAV: final review phase","azav.title":"Quality management (QMS) and AZAV approval","azav.text":"GSS has implemented its QMS. AZAV approval is in the final review phase; it has not yet been granted.","azav.note":"AZAV approval has not yet been granted. Funding via AVGS or Bildungsgutschein is possible only after approval of a suitable measure and a decision by the responsible funding body.",
+  "form.roleEducation":"Education or implementation partner","form.roleImpact":"Impact or CSR partner","form.roleOther":"Other cooperation"
+});
+Object.assign(translations.es, {
+  "cafe.languages":"Alemán–español o alemán–inglés, según el grupo.",
+  "cafe.generations":"Entre generaciones: la experiencia con medios digitales se une a la experiencia familiar, laboral y vital.",
+  "lines.oneText":"La experiencia, los conocimientos y las competencias existentes se hacen visibles, comprensibles y útiles profesionalmente. KompetenzScan, PraxisProfil y Wandelpfad los conectan con pasos realistas hacia la formación, la especialización, el empleo, la práctica o un autoempleo adecuado.",
+  "trust.modules":"módulos básicos","trust.path":"UE del programa base","trust.note":"Programa de 80 UE: Escaneo de Competencias, BasisPass Digitalización e IA y Perfil Práctico y Ruta de Cambio conectan detección de competencias, cualificación base, visibilidad profesional y asesoría de financiación.",
+  "modules.title":"Tres módulos básicos: reconocer, capacitar y aplicar profesionalmente.","modules.text":"Los tres módulos convierten la sustancia profesional existente en un siguiente paso concreto: visible, conectable digitalmente y profesionalmente efectivo.","modules.measureNote":"Programa de 80 UE: Escaneo de Competencias, BasisPass Digitalización e IA y Perfil Práctico y Ruta de Cambio conectan detección de competencias, cualificación base, visibilidad profesional y asesoría de financiación.",
+  "modules.extensionsEyebrow":"Complementos individuales","modules.extensionsTitle":"Dos módulos complementarios: acceso y desarrollo.","modules.extensionsText":"Ambos módulos pueden añadirse por separado con una duración acordada individualmente. Apoyan los módulos básicos, pero no forman parte de las 80 UE del programa base.",
+  "m3.number":"Módulo adicional","m4.number":"Módulo adicional",
+  "m3.imageAlt":"Entrevista de trabajo con una candidata y dos entrevistadores","m4.imageAlt":"Dos profesionales trabajan juntos en tareas digitales con un portátil y una tableta",
+  "m2.title":"BasisPass Digitalización e IA","m2.text":"El BasisPass crea una base común en digitalización, IA, protección de datos, investigación, documentación, comunicación, automarketing, estrategias modernas de candidatura y uso de herramientas según el contexto profesional.",
+  "m3.title":"Acceso y continuidad","m3.text":"Preparar prácticas, formación profesional, candidaturas y acceso al empleo; por ejemplo, «Smart ins Praktikum». Duración: según las necesidades.",
+  "m4.title":"Actualización profesional","m4.text":"Comprender los cambios en las ocupaciones y desarrollar competencias específicas, por ejemplo del marketing al marketing digital. Duración: según las necesidades.",
+  "m5.title":"Perfil Práctico y Ruta de Cambio","m5.text":"El Perfil Práctico traduce el escaneo y el BasisPass en una ruta concreta de cambio: perfil breve, portafolio o muestra de trabajo, tareas prácticas y conexión con formación continua, especialización, empleo o autoempleo. Así se prepara de forma práctica la transformación profesional.",
+  "lines.oneImageAlt":"Personas de distintas profesiones elaboran juntas un perfil de competencias digitales",
+  "lines.imageAlt":"Jóvenes aprenden con una mentora a usar herramientas digitales de forma segura","cafe.imageAlt":"Personas de distintas generaciones comparten ideas sobre temas digitales en el Bilingual Digital Café+",
+  "nav.sovereignty":"Soberanía digital","nav.cafe":"Bilingual Digital Café+",
+  "lines.eyebrow":"Impacto y capacidad de acción profesional","lines.title":"Dos líneas de impacto. Un objetivo común: conservar la capacidad de actuar profesionalmente.","lines.oneLabel":"Línea de impacto 1","lines.oneTitle":"Competencias de futuro y transformación profesional","lines.twoLabel":"Línea de impacto 2","lines.twoTitle":"Soberanía digital: actuar con seguridad y autonomía","lines.twoText":"Las personas participantes aprenden a proteger sus datos y su identidad digital, utilizar la IA de forma segura, crítica y responsable y reconocer sus oportunidades, límites, errores y sesgos.","lines.topic1":"Comprobar información, fuentes y hechos; reconocer deepfakes y desinformación.","lines.topic2":"Gestionar conscientemente la reputación digital y las redes sociales.","lines.topic3":"Reconocer ciberacoso y manipulación, conocer vías de ayuda y desarrollar resiliencia digital.",
+  "cafe.eyebrow":"Formato práctico y de transferencia","cafe.title":"Bilingual Digital Café+","cafe.text":"Un espacio bilingüe y accesible para probar herramientas digitales e IA, plantear preguntas, intercambiar experiencias y desarrollar pasos concretos de protección, aprendizaje y acción. El café facilita la aplicación de las dos líneas de impacto.","cafe.partnerNote":"ACUDA e. V. está prevista como socia comunitaria y de impacto para formatos seleccionados. GSS responde por el producto, currículo, calidad y ejecución.","cafe.participantCta":"Solicitar una primera consulta gratuita","cafe.partnerCta":"Colaborar como socio piloto o de cooperación",
+  "profile.team":"Como titular de GSS Management Consulting, Geraldine Sepúlveda Santana responde por el producto, currículo, calidad, mercado y desarrollo de KompetenzWandel KI+. Klaus Schmidt participa en la colaboración estratégica.",
+  "hero.badge2":"Calidad y financiación","status.finalPhase":"AZAV: fase final de revisión","azav.title":"Gestión de calidad (QMS) y autorización AZAV","azav.text":"GSS ha implantado su QMS. La autorización AZAV está en la fase final de revisión; todavía no se ha concedido.","azav.note":"La autorización AZAV aún no se ha concedido. La financiación mediante AVGS o Bildungsgutschein solo es posible tras la autorización de una medida adecuada y la decisión del organismo financiador competente.",
+  "form.roleEducation":"Socio educativo o de implementación","form.roleImpact":"Socio de impacto o RSC","form.roleOther":"Otra cooperación"
+});
+
 const moduleDetails = {
   de: {
     scan: {
@@ -780,9 +848,22 @@ const moduleDetails = {
   }
 };
 
+Object.assign(moduleDetails.de, {
+  einstieg: { title: "Einstieg und Anschluss", kicker: "Der passende Einstieg in Praxis und Beruf.", description: "Praktikum, Ausbildung, Bewerbung und Berufseinstieg gezielt vorbereiten – etwa mit ‚Smart ins Praktikum‘. Der konkrete Umfang richtet sich nach dem individuellen Bedarf.", duration: "Nach Bedarf; Umfang und UE werden individuell vereinbart.", includes: ["berufliches Ziel und passende Einstiegswege klären", "Bewerbung, Praktikum oder Ausbildung praktisch vorbereiten", "nächste Schritte und Kontakte planen"], outcome: "Ein konkreter, überprüfbarer Anschlussweg in Praxis, Ausbildung oder Arbeit.", access: "Im Erstgespräch werden Bedarf, Zeitumfang und mögliche Finanzierung geklärt. Fördermöglichkeiten hängen von Zulassung und Einzelfallentscheidung ab.", visualClass: "detail-visual-einstieg" },
+  upgrade: { title: "Berufliches Upgrade", kicker: "Kompetenzen an veränderte Tätigkeiten anpassen.", description: "Veränderte Berufsbilder verstehen und vorhandene Kompetenzen gezielt weiterentwickeln – zum Beispiel vom Marketing zum Digital Marketing. Der konkrete Umfang richtet sich nach dem individuellen Bedarf.", duration: "Nach Bedarf; Umfang und UE werden individuell vereinbart.", includes: ["Veränderungen im eigenen Berufsfeld analysieren", "gezielte digitale und fachliche Lernschritte auswählen", "neue Kompetenzen an einer praktischen Aufgabe anwenden"], outcome: "Ein realistischer Plan für die berufliche Weiterentwicklung mit anwendbaren Kompetenzen.", access: "Im Erstgespräch werden Bedarf, Zeitumfang und mögliche Finanzierung geklärt. Fördermöglichkeiten hängen von Zulassung und Einzelfallentscheidung ab.", visualClass: "detail-visual-upgrade" },
+});
+Object.assign(moduleDetails.en, {
+  einstieg: { title: "Entry and Progression", kicker: "A suitable route into practice and work.", description: "Prepare for internships, vocational training, applications and entry into employment, for example with ‘Smart into an Internship’. Scope depends on individual needs.", duration: "As needed; scope and training units are agreed individually.", includes: ["clarify a professional goal and suitable entry routes", "prepare applications, internships or training in practice", "plan next steps and contacts"], outcome: "A concrete, verifiable pathway into practice, training or employment.", access: "The first consultation clarifies needs, duration and potential funding. Funding depends on approval and an individual decision.", visualClass: "detail-visual-einstieg" },
+  upgrade: { title: "Professional Upgrade", kicker: "Adapt skills to changing roles.", description: "Understand changing job profiles and develop existing skills in a targeted way, for example from marketing to digital marketing. Scope depends on individual needs.", duration: "As needed; scope and training units are agreed individually.", includes: ["analyse changes in the relevant profession", "choose targeted digital and specialist learning steps", "apply new skills in a practical task"], outcome: "A realistic professional development plan with applicable skills.", access: "The first consultation clarifies needs, duration and potential funding. Funding depends on approval and an individual decision.", visualClass: "detail-visual-upgrade" },
+});
+Object.assign(moduleDetails.es, {
+  einstieg: { title: "Acceso y continuidad", kicker: "Una vía adecuada hacia la práctica y el empleo.", description: "Preparar prácticas, formación profesional, candidaturas y entrada al empleo, por ejemplo con «Smart ins Praktikum». El alcance depende de las necesidades individuales.", duration: "Según las necesidades; alcance y UE acordadas individualmente.", includes: ["definir el objetivo profesional y las vías de acceso", "preparar candidaturas, prácticas o formación", "planificar próximos pasos y contactos"], outcome: "Una vía concreta y verificable hacia prácticas, formación o empleo.", access: "En la primera consulta se aclaran necesidades, duración y posible financiación. La financiación depende de autorizaciones y decisiones individuales.", visualClass: "detail-visual-einstieg" },
+  upgrade: { title: "Actualización profesional", kicker: "Adaptar competencias a ocupaciones cambiantes.", description: "Comprender los cambios de los perfiles profesionales y desarrollar competencias específicas, por ejemplo del marketing al marketing digital. El alcance depende de las necesidades individuales.", duration: "Según las necesidades; alcance y UE acordadas individualmente.", includes: ["analizar cambios del sector profesional", "elegir pasos de aprendizaje digital y especializado", "aplicar nuevas competencias en una tarea práctica"], outcome: "Un plan realista de desarrollo profesional con competencias aplicables.", access: "En la primera consulta se aclaran necesidades, duración y posible financiación. La financiación depende de autorizaciones y decisiones individuales.", visualClass: "detail-visual-upgrade" },
+});
+
 function getModuleKey() {
   const requested = new URLSearchParams(window.location.search).get("mod");
-  return ["scan", "basis", "praxis"].includes(requested) ? requested : "scan";
+  return ["scan", "basis", "einstieg", "upgrade", "praxis"].includes(requested) ? requested : "scan";
 }
 
 function renderModuleDetail(lang) {
@@ -808,89 +889,36 @@ function renderModuleDetail(lang) {
   if (visual) visual.className = `detail-visual ${detail.visualClass}`;
 }
 
-function updateModuleCarouselDistance() {
+let moduleCarouselIndex = 0;
+
+function updateModuleCarouselPosition(animate = false) {
   const track = document.querySelector("[data-carousel-track]");
   if (!track) return;
-  const first = track.querySelector(".module-card:not(.module-card-clone)");
-  const firstClone = track.querySelector(".module-card-clone");
-  if (!first || !firstClone) return;
-  const distance = firstClone.offsetLeft - first.offsetLeft;
-  if (distance > 0) {
-    track.style.setProperty("--module-loop-distance", `${distance}px`);
-  }
-}
-
-function moduleCarouselMetrics(track) {
-  const originals = Array.from(track.querySelectorAll(".module-card:not(.module-card-clone)"));
-  const firstClone = track.querySelector(".module-card-clone");
-  if (originals.length < 2 || !firstClone) return null;
-  return {
-    step: originals[1].offsetLeft - originals[0].offsetLeft,
-    loopDistance: firstClone.offsetLeft - originals[0].offsetLeft
-  };
-}
-
-function readCarouselOffset(track, loopDistance) {
-  const transform = getComputedStyle(track).transform;
-  if (!transform || transform === "none") return 0;
-  const match = transform.match(/matrix\(([^)]+)\)/);
-  if (!match) return 0;
-  const values = match[1].split(",").map((value) => Number(value.trim()));
-  const x = Number.isFinite(values[4]) ? values[4] : 0;
-  return ((-x % loopDistance) + loopDistance) % loopDistance;
-}
-
-function parseAnimationSeconds(track) {
-  const duration = (getComputedStyle(track).animationDuration || "").split(",")[0].trim();
-  if (duration.endsWith("ms")) return Number.parseFloat(duration) / 1000;
-  if (duration.endsWith("s")) return Number.parseFloat(duration);
-  return Number.parseFloat(track.dataset.animationSeconds || "34") || 34;
-}
-
-let moduleCarouselResumeTimer;
-
-function resumeModuleCarousel(track, offset, loopDistance) {
-  const duration = Number(track.dataset.animationSeconds || "34") || 34;
-  const progress = loopDistance ? offset / loopDistance : 0;
-  track.style.animationDelay = `${-progress * duration}s`;
-  track.classList.remove("module-carousel-manual");
-  track.style.transition = "";
-  track.style.transform = "";
+  const cards = Array.from(track.querySelectorAll(".module-card"));
+  if (cards.length < 2) return;
+  const step = cards[1].offsetLeft - cards[0].offsetLeft;
+  if (step <= 0) return;
+  moduleCarouselIndex = ((moduleCarouselIndex % cards.length) + cards.length) % cards.length;
+  track.style.transition = animate ? "transform .62s cubic-bezier(.22, .72, .18, 1)" : "none";
+  track.style.transform = `translateX(${-moduleCarouselIndex * step}px)`;
 }
 
 function moveModuleCarousel(direction) {
   const track = document.querySelector("[data-carousel-track]");
   if (!track) return;
-  const metrics = moduleCarouselMetrics(track);
-  if (!metrics || metrics.step <= 0 || metrics.loopDistance <= 0) return;
-  const duration = parseAnimationSeconds(track);
-  track.dataset.animationSeconds = String(duration || 34);
-  const current = readCarouselOffset(track, metrics.loopDistance);
-  const next = ((current + direction * metrics.step) % metrics.loopDistance + metrics.loopDistance) % metrics.loopDistance;
-  window.clearTimeout(moduleCarouselResumeTimer);
-  track.classList.add("module-carousel-manual");
-  track.style.transition = "transform .62s cubic-bezier(.22, .72, .18, 1)";
-  track.style.transform = `translateX(${-next}px)`;
-  moduleCarouselResumeTimer = window.setTimeout(() => {
-    resumeModuleCarousel(track, next, metrics.loopDistance);
-  }, 5200);
+  const count = track.querySelectorAll(".module-card").length;
+  if (count < 2) return;
+  const next = (moduleCarouselIndex + direction + count) % count;
+  const wrapped = direction > 0 ? next < moduleCarouselIndex : next > moduleCarouselIndex;
+  moduleCarouselIndex = next;
+  updateModuleCarouselPosition(!wrapped);
 }
 
 function setupModuleCarousel() {
   const track = document.querySelector("[data-carousel-track]");
   if (!track) return;
-  track.querySelectorAll(".module-card-clone").forEach((card) => card.remove());
-  const originals = Array.from(track.querySelectorAll(".module-card"));
-  originals.forEach((card) => {
-    const clone = card.cloneNode(true);
-    clone.classList.add("module-card-clone");
-    clone.setAttribute("aria-hidden", "true");
-    clone.querySelectorAll("a, button").forEach((element) => {
-      element.setAttribute("tabindex", "-1");
-    });
-    track.appendChild(clone);
-  });
-  window.requestAnimationFrame(updateModuleCarouselDistance);
+  moduleCarouselIndex = 0;
+  window.requestAnimationFrame(() => updateModuleCarouselPosition(false));
 }
 
 const SEO_BASE_URL = "https://kompetenzwandel-ki-plus.gss-consulting.de";
@@ -917,10 +945,10 @@ const SEO_COPY = {
       ogDescription: "Interne Übersicht der Landingpage-Versionen."
     },
     moduleFallback: {
-      title: "Module | KompetenzWandel KI+ | KompetenzScan, BasisPass und Wandelpfad",
-      description: "Moduldetails zu KompetenzScan, BasisPass Digitalisierung & KI sowie PraxisProfil & Wandelpfad von GSS Management Consulting.",
+      title: "Fünf Module | KompetenzWandel KI+",
+      description: "Drei Kernmodule mit 80 UE: KompetenzScan, BasisPass Digitalisierung & KI sowie PraxisProfil & Wandelpfad. Ergänzend: Einstieg und Anschluss sowie Berufliches Upgrade nach Bedarf.",
       ogTitle: "Module | KompetenzWandel KI+",
-      ogDescription: "Drei Bausteine für Kompetenz-Upgrade, digitale Basis und berufliche Transformation."
+      ogDescription: "Fünf Module: 80 UE Kernprogramm plus Einstieg und Upgrade nach Bedarf."
     }
   },
   en: {
@@ -943,10 +971,10 @@ const SEO_COPY = {
       ogDescription: "Internal overview of landing page versions."
     },
     moduleFallback: {
-      title: "Modules | KompetenzWandel KI+ | Competence Scan, BasisPass and Change Path",
-      description: "Module details for Competence Scan, BasisPass Digitalization & AI and Practice Profile & Change Path by GSS Management Consulting.",
+      title: "Five modules | KompetenzWandel KI+",
+      description: "Three core modules with 80 training units: Competence Scan, BasisPass Digitalization & AI, and Practice Profile & Change Path. Optional: Entry and Progression and Professional Upgrade.",
       ogTitle: "Modules | KompetenzWandel KI+",
-      ogDescription: "Three building blocks for competence upgrade, digital foundations and professional transformation."
+      ogDescription: "Five modules: an 80-unit core plus entry and upgrade as needed."
     }
   },
   es: {
@@ -969,10 +997,10 @@ const SEO_COPY = {
       ogDescription: "Resumen interno de versiones de la landing page."
     },
     moduleFallback: {
-      title: "Módulos | KompetenzWandel KI+ | Escaneo, BasisPass y ruta de cambio",
-      description: "Detalles de los módulos Escaneo de Competencias, BasisPass Digitalización e IA y Perfil Práctico y Ruta de Cambio de GSS Management Consulting.",
+      title: "Cinco módulos | KompetenzWandel KI+",
+      description: "Tres módulos básicos con 80 UE: Escaneo de Competencias, BasisPass Digitalización e IA y Perfil Práctico y Ruta de Cambio. Complementos: Acceso y continuidad y Actualización profesional.",
       ogTitle: "Módulos | KompetenzWandel KI+",
-      ogDescription: "Tres módulos para upgrade de competencias, base digital y transformación profesional."
+      ogDescription: "Cinco módulos: 80 UE del programa base más acceso y actualización según las necesidades."
     }
   }
 };
@@ -1098,7 +1126,16 @@ function applyLanguage(lang) {
   localStorage.setItem("gss-kwki-language", active);
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const value = dict[element.dataset.i18n];
-    if (value) element.innerHTML = value;
+    if (!value) return;
+    if (/^H[1-6]$/.test(element.tagName) && value.includes(": ") && !value.includes("<")) {
+      const separator = value.indexOf(": ") + 1;
+      const continuation = document.createElement("span");
+      continuation.className = "title-continuation";
+      continuation.textContent = value.slice(separator).trimStart();
+      element.replaceChildren(document.createTextNode(value.slice(0, separator)), continuation);
+    } else {
+      element.innerHTML = value;
+    }
   });
   document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
     const value = dict[element.dataset.i18nPlaceholder];
@@ -1108,8 +1145,42 @@ function applyLanguage(lang) {
     const value = dict[element.dataset.i18nAriaLabel];
     if (value) element.setAttribute("aria-label", value);
   });
+  document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+    const value = dict[element.dataset.i18nAlt];
+    if (value) element.setAttribute("alt", value);
+  });
+  const accessibilityLabels = {
+    de: { nav: 'Hauptnavigation', language: 'Sprache wählen', carousel: 'Module wechseln', home: 'GSS Management Consulting – Startseite', actions: 'KompetenzWandel Aktionen' },
+    en: { nav: 'Main navigation', language: 'Choose language', carousel: 'Change modules', home: 'GSS Management Consulting – home page', actions: 'KompetenzWandel actions' },
+    es: { nav: 'Navegación principal', language: 'Elegir idioma', carousel: 'Cambiar módulos', home: 'GSS Management Consulting – página principal', actions: 'Acciones de KompetenzWandel' }
+  }[active];
+  document.querySelector('.nav')?.setAttribute('aria-label', accessibilityLabels.nav);
+  document.querySelector('.language')?.setAttribute('aria-label', accessibilityLabels.language);
+  document.querySelector('.module-carousel-controls')?.setAttribute('aria-label', accessibilityLabels.carousel);
+  document.querySelector('.footer-home-logo')?.setAttribute('aria-label', accessibilityLabels.home);
+  document.querySelector('.footer-action-group')?.setAttribute('aria-label', accessibilityLabels.actions);
+  const menuToggle = document.querySelector('.nav-menu-toggle');
+  if (menuToggle) menuToggle.textContent = { de: 'Menü', en: 'Menu', es: 'Menú' }[active];
+  document.querySelectorAll('.nav-group .submenu-toggle').forEach(button => {
+    const group = button.closest('.nav-group');
+    const name = group?.querySelector('a')?.textContent?.trim() || dict['nav.offer'];
+    button.setAttribute('aria-label', `${name} – ${{ de: 'Untermenü', en: 'submenu', es: 'submenú' }[active]}`);
+  });
   document.querySelectorAll(".lang").forEach((button) => {
     button.classList.toggle("active", button.dataset.lang === active);
+  });
+  document.querySelectorAll('a[href]').forEach((link) => {
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('https://wa.me/')) return;
+    if (!href.includes('.html') && !link.hasAttribute('data-gss-link')) return;
+    const localPreview = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+    const target = localPreview && link.hasAttribute('data-gss-link')
+      ? `${window.location.protocol}//${window.location.hostname}:8775/index.html`
+      : href;
+    const url = new URL(target, window.location.href);
+    if (url.origin !== window.location.origin && !link.hasAttribute('data-gss-link')) return;
+    url.searchParams.set('lang', active);
+    link.href = url.toString();
   });
   renderModuleDetail(active);
   setupModuleCarousel();
@@ -1242,13 +1313,13 @@ if (document.readyState === "loading") {
 }
 
 window.addEventListener("load", settleHashScroll);
-window.addEventListener("resize", updateModuleCarouselDistance);
+window.addEventListener("resize", () => updateModuleCarouselPosition(false));
 
 const SEARCH_ENTRY_BLUEPRINTS = {
   de: [
     { title: "Startseite", text: "KompetenzWandel KI+ GSS Zukunftskompetenz Frankfurt Kompetenz-Upgrade migrantische und internationale Berufsbiografien", url: "index.html", priority: 4 },
     { title: "Leistung", text: "berufliche Substanz sichtbar machen Upgrade Zukunftskompetenz Kompetenzen Wissen Qualifikationen Digitalisierungsgrundlagen KI Fachsprache Arbeitsmarktwissen", url: "index.html#angebot", priority: 8 },
-    { title: "Module", text: "KompetenzScan BasisPass Digitalisierung KI PraxisProfil Wandelpfad moderne Bewerbungsstrategien 80 UE Programm Anmeldung Beratung", url: "index.html#module", priority: 7 },
+    { title: "Module", text: "KompetenzScan BasisPass Digitalisierung KI PraxisProfil Wandelpfad 80 UE Kernprogramm Einstieg Anschluss Berufliches Upgrade nach Bedarf Anmeldung Beratung", url: "index.html#module", priority: 7 },
     { title: "Praxis", text: "Brücke in die Praxis Praxisaufgaben Projektarbeit Hospitation Praktikum Praxislabore Kompetenzen nutzen Anerkennung Weiterbildung Spezialisierung Beschäftigung Selbständigkeit", url: "index.html#umsetzung", priority: 10 },
     { title: "Impact", text: "Impact Frankfurt Standortvorteil migrantische internationale Berufsbiografien Fachkräfte Zukunftskompetenz Resilienz Nachhaltigkeit berufliche Transformation", url: "index.html#umsetzung", priority: 10 },
     { title: "Förderung", text: "AZAV Zertifizierung § 45 SGB III § 81 SGB III AVGS Bildungsgutschein Förderung Förderberatung Aktivierung berufliche Eingliederung Weiterbildung", url: "index.html#qualitaet", priority: 12 },
@@ -1261,7 +1332,7 @@ const SEARCH_ENTRY_BLUEPRINTS = {
   en: [
     { title: "Home", text: "KompetenzWandel KI+ GSS future-ready competence Frankfurt competence upgrade migrant and international professional biographies", url: "index.html", priority: 4 },
     { title: "Service", text: "make professional substance visible upgrade competencies knowledge qualifications digital foundations AI professional language labour market knowledge", url: "index.html#angebot", priority: 8 },
-    { title: "Modules", text: "Competence Scan BasisPass Digitalization AI Practice Profile Change Path modern application strategies 80 training units application consultation", url: "index.html#module", priority: 7 },
+    { title: "Modules", text: "Competence Scan BasisPass Digitalization AI Entry and Progression Professional Upgrade Practice Profile Change Path 80 core training units as needed application consultation", url: "index.html#module", priority: 7 },
     { title: "Practice", text: "Praxis bridge into practice practice tasks project work shadowing internships practice labs use competencies recognition training specialization employment self-employment", url: "index.html#umsetzung", priority: 10 },
     { title: "Impact", text: "Impact impact Frankfurt location advantage migrant international professional biographies skilled workers future-ready competence resilience sustainability professional transformation", url: "index.html#umsetzung", priority: 10 },
     { title: "Funding", text: "AZAV certification § 45 SGB III § 81 SGB III AVGS Bildungsgutschein funding consultation activation professional integration vocational training", url: "index.html#qualitaet", priority: 12 },
@@ -1274,7 +1345,7 @@ const SEARCH_ENTRY_BLUEPRINTS = {
   es: [
     { title: "Página principal", text: "KompetenzWandel KI+ GSS competencias de futuro Frankfurt upgrade de competencias biografías profesionales migrantes e internacionales", url: "index.html", priority: 4 },
     { title: "Servicio", text: "hacer visible sustancia profesional upgrade competencias conocimientos cualificaciones base digital IA lenguaje profesional conocimiento del mercado laboral", url: "index.html#angebot", priority: 8 },
-    { title: "Módulos", text: "Escaneo de Competencias BasisPass digitalización IA Perfil Práctico Ruta de Cambio estrategias modernas de candidatura programa 80 UE inscripción asesoría", url: "index.html#module", priority: 7 },
+    { title: "Módulos", text: "Escaneo de Competencias BasisPass Digitalización IA Acceso y continuidad Actualización profesional Perfil Práctico Ruta de Cambio programa base 80 UE según las necesidades inscripción asesoría", url: "index.html#module", priority: 7 },
     { title: "Práctica", text: "Praxis puente hacia la práctica tareas prácticas proyectos hospitaciones prácticas laboratorios de práctica utilizar competencias reconocimiento formación especialización empleo autoempleo", url: "index.html#umsetzung", priority: 10 },
     { title: "Impacto", text: "Impact impacto Frankfurt ventaja local biografías profesionales migrantes internacionales talento competencias de futuro resiliencia sostenibilidad transformación profesional", url: "index.html#umsetzung", priority: 10 },
     { title: "Financiación", text: "certificación AZAV § 45 SGB III § 81 SGB III AVGS Bildungsgutschein financiación asesoría activación integración profesional formación continua", url: "index.html#qualitaet", priority: 12 },
@@ -1557,6 +1628,10 @@ if (year) year.textContent = new Date().getFullYear();
 
 const moduleForm = document.querySelector("#moduleForm");
 if (moduleForm) {
+  if (new URLSearchParams(window.location.search).get('role') === 'partner') {
+    const roleField = moduleForm.querySelector('#formRole');
+    if (roleField) roleField.selectedIndex = 2;
+  }
   moduleForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const lang = document.documentElement.lang || "de";
@@ -1587,3 +1662,56 @@ if (moduleForm) {
     window.location.href = `mailto:info@gss-consulting.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 }
+
+function setupResponsiveNavigation() {
+  const header = document.querySelector('.site-header');
+  const nav = header?.querySelector('.nav');
+  if (!header || !nav) return;
+  nav.id = 'primary-navigation';
+  const menuToggle = document.createElement('button');
+  menuToggle.type = 'button';
+  menuToggle.className = 'nav-menu-toggle';
+  menuToggle.setAttribute('aria-controls', nav.id);
+  menuToggle.setAttribute('aria-expanded', 'false');
+  menuToggle.textContent = { de: 'Menü', en: 'Menu', es: 'Menú' }[document.documentElement.lang] || 'Menü';
+  header.insertBefore(menuToggle, nav);
+  function closeMenu() {
+    header.classList.remove('nav-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    nav.querySelectorAll('.nav-group').forEach(group => {
+      group.classList.remove('expanded');
+      group.querySelector('.submenu-toggle,.nav-parent')?.setAttribute('aria-expanded', 'false');
+    });
+  }
+  menuToggle.addEventListener('click', () => {
+    const open = header.classList.toggle('nav-open');
+    menuToggle.setAttribute('aria-expanded', String(open));
+  });
+  nav.querySelectorAll('.nav-group').forEach(group => {
+    const submenu = group.querySelector('.submenu');
+    if (!submenu) return;
+    const parent = group.querySelector('.nav-parent');
+    const control = parent || document.createElement('button');
+    if (!parent) {
+      control.type = 'button';
+      control.className = 'submenu-toggle';
+      control.textContent = '+';
+      const submenuWord = { de: 'Untermenü', en: 'submenu', es: 'submenú' }[document.documentElement.lang] || 'Untermenü';
+      control.setAttribute('aria-label', `${group.querySelector('a')?.textContent?.trim() || 'Leistung'} – ${submenuWord}`);
+      group.insertBefore(control, submenu);
+    }
+    control.setAttribute('aria-expanded', 'false');
+    control.addEventListener('click', () => {
+      if (window.innerWidth > 980) return;
+      const expanded = group.classList.toggle('expanded');
+      control.setAttribute('aria-expanded', String(expanded));
+    });
+  });
+  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    if (window.innerWidth <= 980) closeMenu();
+  }));
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 980) closeMenu();
+  });
+}
+setupResponsiveNavigation();
