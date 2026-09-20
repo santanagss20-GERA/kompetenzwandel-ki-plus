@@ -889,36 +889,89 @@ function renderModuleDetail(lang) {
   if (visual) visual.className = `detail-visual ${detail.visualClass}`;
 }
 
-let moduleCarouselIndex = 0;
+const moduleCarouselReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const moduleCarouselCanHover = window.matchMedia("(hover: hover) and (pointer: fine)");
+let moduleCarouselOffset = 0;
+let moduleCarouselStep = 0;
+let moduleCarouselLoopDistance = 0;
+let moduleCarouselManualIndex = null;
+let moduleCarouselPauseUntil = 0;
+let moduleCarouselLastFrame = 0;
+let moduleCarouselFrame = 0;
 
-function updateModuleCarouselPosition(animate = false) {
+function renderModuleCarousel() {
+  const track = document.querySelector("[data-carousel-track]");
+  if (track) track.style.transform = `translate3d(${-moduleCarouselOffset}px, 0, 0)`;
+}
+
+function updateModuleCarouselMetrics(preservePosition = true) {
   const track = document.querySelector("[data-carousel-track]");
   if (!track) return;
-  const cards = Array.from(track.querySelectorAll(".module-card"));
-  if (cards.length < 2) return;
-  const step = cards[1].offsetLeft - cards[0].offsetLeft;
-  if (step <= 0) return;
-  moduleCarouselIndex = ((moduleCarouselIndex % cards.length) + cards.length) % cards.length;
-  track.style.transition = animate ? "transform .62s cubic-bezier(.22, .72, .18, 1)" : "none";
-  track.style.transform = `translateX(${-moduleCarouselIndex * step}px)`;
+  const originals = Array.from(track.querySelectorAll(".module-card:not(.module-card-clone)"));
+  const firstClone = track.querySelector(".module-card-clone");
+  if (originals.length < 2 || !firstClone) return;
+  const previousDistance = moduleCarouselLoopDistance;
+  moduleCarouselStep = originals[1].offsetLeft - originals[0].offsetLeft;
+  moduleCarouselLoopDistance = firstClone.offsetLeft - originals[0].offsetLeft;
+  if (moduleCarouselStep <= 0 || moduleCarouselLoopDistance <= 0) return;
+  moduleCarouselOffset = preservePosition && previousDistance
+    ? moduleCarouselOffset * moduleCarouselLoopDistance / previousDistance
+    : 0;
+  track.style.transition = "none";
+  renderModuleCarousel();
+}
+
+function animateModuleCarousel(time) {
+  moduleCarouselFrame = window.requestAnimationFrame(animateModuleCarousel);
+  const elapsed = moduleCarouselLastFrame ? Math.min(time - moduleCarouselLastFrame, 50) : 0;
+  moduleCarouselLastFrame = time;
+  const carousel = document.querySelector(".module-carousel");
+  if (!carousel || !moduleCarouselLoopDistance || moduleCarouselReducedMotion.matches || document.hidden ||
+      (moduleCarouselCanHover.matches && carousel.matches(":hover")) || carousel.querySelector(":focus-visible") || time < moduleCarouselPauseUntil) return;
+  if (moduleCarouselManualIndex !== null) {
+    moduleCarouselManualIndex = null;
+    carousel.querySelector("[data-carousel-track]").style.transition = "none";
+  }
+  moduleCarouselOffset = (moduleCarouselOffset + elapsed * moduleCarouselLoopDistance / 34000) % moduleCarouselLoopDistance;
+  renderModuleCarousel();
 }
 
 function moveModuleCarousel(direction) {
   const track = document.querySelector("[data-carousel-track]");
-  if (!track) return;
-  const count = track.querySelectorAll(".module-card").length;
+  if (!track || moduleCarouselStep <= 0) return;
+  const count = track.querySelectorAll(".module-card:not(.module-card-clone)").length;
   if (count < 2) return;
-  const next = (moduleCarouselIndex + direction + count) % count;
-  const wrapped = direction > 0 ? next < moduleCarouselIndex : next > moduleCarouselIndex;
-  moduleCarouselIndex = next;
-  updateModuleCarouselPosition(!wrapped);
+  const current = moduleCarouselManualIndex === null
+    ? direction > 0 ? Math.floor(moduleCarouselOffset / moduleCarouselStep) : Math.ceil(moduleCarouselOffset / moduleCarouselStep)
+    : moduleCarouselManualIndex;
+  const next = (current + direction + count) % count;
+  const wrapped = direction > 0 ? next < current : next > current;
+  moduleCarouselManualIndex = next;
+  moduleCarouselOffset = next * moduleCarouselStep;
+  moduleCarouselPauseUntil = performance.now() + 8000;
+  track.style.transition = wrapped ? "none" : "transform .62s cubic-bezier(.22, .72, .18, 1)";
+  renderModuleCarousel();
 }
 
 function setupModuleCarousel() {
   const track = document.querySelector("[data-carousel-track]");
   if (!track) return;
-  moduleCarouselIndex = 0;
-  window.requestAnimationFrame(() => updateModuleCarouselPosition(false));
+  track.querySelectorAll(".module-card-clone").forEach((card) => card.remove());
+  const originals = Array.from(track.querySelectorAll(".module-card"));
+  originals.forEach((card) => {
+    const clone = card.cloneNode(true);
+    clone.classList.add("module-card-clone");
+    clone.setAttribute("aria-hidden", "true");
+    clone.setAttribute("inert", "");
+    clone.querySelectorAll("a, button").forEach((element) => element.setAttribute("tabindex", "-1"));
+    track.appendChild(clone);
+  });
+  moduleCarouselOffset = 0;
+  moduleCarouselManualIndex = null;
+  moduleCarouselPauseUntil = 0;
+  moduleCarouselLastFrame = 0;
+  window.requestAnimationFrame(() => updateModuleCarouselMetrics(false));
+  if (!moduleCarouselFrame) moduleCarouselFrame = window.requestAnimationFrame(animateModuleCarousel);
 }
 
 const SEO_BASE_URL = "https://kompetenzwandel-ki-plus.gss-consulting.de";
@@ -1313,7 +1366,7 @@ if (document.readyState === "loading") {
 }
 
 window.addEventListener("load", settleHashScroll);
-window.addEventListener("resize", () => updateModuleCarouselPosition(false));
+window.addEventListener("resize", () => updateModuleCarouselMetrics(true));
 
 const SEARCH_ENTRY_BLUEPRINTS = {
   de: [
