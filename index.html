@@ -39,7 +39,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260921-seo-team">
+  <link rel="stylesheet" href="styles.css?v=20260921-offers5">
 </head>
 <body>
   <header class="site-header">
@@ -48,7 +48,7 @@
     </a>
     <nav class="nav" aria-label="Hauptnavigation">
       <a href="index.html" data-i18n="nav.home">Startseite</a>
-      <div class="nav-group"><a href="index.html#angebot" data-i18n="nav.offer">Leistung</a><div class="submenu"><a href="index.html#module" data-i18n="nav.modules">Module</a><a href="index.html#digitale-souveraenitaet" data-i18n="nav.sovereignty">Digitale Souveränität</a><a href="index.html#bilingual-digital-cafe" data-i18n="nav.cafe">Bilingual Digital Café+</a></div></div>
+      <div class="nav-group"><a href="index.html#angebot" data-i18n="nav.offer">Leistung</a><div class="submenu"><a href="index.html#module" data-i18n="nav.modules">Module</a><a href="modul.html?mod=einstieg" data-i18n="nav.youth">Jugend &amp; Übergang Schule–Beruf</a><a href="index.html#digitale-souveraenitaet" data-i18n="nav.sovereignty">Digitale Souveränität</a><a href="index.html#bilingual-digital-cafe" data-i18n="nav.cafe">Bilingual Digital Café+</a></div></div>
       <div class="nav-group"><button class="nav-parent" type="button" data-i18n="nav.implementation">Umsetzung</button><div class="submenu"><a href="index.html#umsetzung" data-i18n="nav.practiceImpact">Praxis & Impact</a></div></div>
       <a href="index.html#qualitaet" data-i18n="nav.quality">Förderung</a>
       <div class="nav-group"><button class="nav-parent" type="button" data-i18n="nav.about">Über uns</button><div class="submenu"><a href="index.html#profil" data-i18n="nav.profile">Profil</a><a href="index.html#hinweise" data-i18n="nav.notice">Hinweise</a></div></div>
@@ -135,6 +135,13 @@
           </div>
           <p data-i18n="modules.text">Die drei Module machen aus vorhandener beruflicher Substanz einen konkreten nächsten Schritt: sichtbar, digital anschlussfähig und beruflich wirksam.</p>
         </div>
+        <div class="module-map" aria-label="Übersicht der fünf Module" data-i18n-aria-label="modules.mapLabel">
+          <a href="modul.html?mod=scan"><span>01</span><strong data-i18n="m1.title">KompetenzScan</strong><small data-i18n="modules.coreLabel">Kernmodul</small></a>
+          <a href="modul.html?mod=basis"><span>02</span><strong data-i18n="m2.title">BasisPass Digitalisierung &amp; KI</strong><small data-i18n="modules.coreLabel">Kernmodul</small></a>
+          <a href="modul.html?mod=einstieg"><span>03</span><strong data-i18n="m3.title">Einstieg und Anschluss</strong><small data-i18n="modules.extensionLabel">Ergänzungsmodul</small></a>
+          <a href="modul.html?mod=upgrade"><span>04</span><strong data-i18n="m4.title">Berufliches Upgrade</strong><small data-i18n="modules.extensionLabel">Ergänzungsmodul</small></a>
+          <a href="modul.html?mod=praxis"><span>05</span><strong data-i18n="m5.title">PraxisProfil &amp; Wandelpfad</strong><small data-i18n="modules.coreLabel">Kernmodul</small></a>
+        </div>
         <div class="module-carousel" aria-label="KompetenzWandel KI+ Module">
           <div class="module-grid" data-carousel-track>
             <article class="module-card">
@@ -158,7 +165,7 @@
             <article class="module-card">
               <div class="module-photo module-photo-praxis" aria-hidden="true"></div>
               <div class="module-body">
-                <span>03</span>
+                <span>05</span>
                 <h3 data-i18n="m5.title">PraxisProfil & Wandelpfad</h3>
                 <p data-i18n="m5.text">Das PraxisProfil übersetzt Scan und BasisPass in einen konkreten Wandelpfad: Kurzprofil, Portfolio oder Arbeitsprobe, Praxisaufgaben und Anschluss in Weiterbildung, Spezialisierung, Beschäftigung oder Gründung. So wird berufliche Transformation praktisch vorbereitet.</p>
                 <a class="module-link" href="modul.html?mod=praxis" data-i18n="modules.more">Mehr erfahren & anmelden</a>
@@ -217,6 +224,8 @@
                 <p class="eyebrow" data-i18n="lines.oneLabel">Wirkungslinie 1</p>
                 <h3 data-i18n="lines.oneTitle">Zukunftskompetenzen und beruflicher KompetenzWandel</h3>
                 <p data-i18n="lines.oneText">Vorhandene Erfahrungen, Kenntnisse und Kompetenzen werden sichtbar, verständlich und beruflich nutzbar. KompetenzScan, PraxisProfil und Wandelpfad verbinden sie mit realistischen Schritten in Weiterbildung, Spezialisierung, Beschäftigung, Praxis oder eine passende Selbständigkeit.</p>
+                <p class="impact-line-note" data-i18n="lines.oneStructure">Die drei Kernmodule bilden den 80-UE-Lernpfad. Die ergänzenden Module „Einstieg und Anschluss“ und „Berufliches Upgrade“ vertiefen je nach Zielgruppe den Übergang oder die berufliche Weiterentwicklung.</p>
+                <a class="module-link" href="#module" data-i18n="lines.oneModulesLink">Kernmodule und Ergänzungen ansehen</a>
               </div>
             </div>
           </article>
@@ -358,10 +367,10 @@
         <div>
           <p class="eyebrow" data-i18n="azav.eyebrow">Förderung & Qualität</p>
           <div class="azav-title-row">
-            <h2 data-i18n="azav.title">Qualitätsmanagement (QMS) und AZAV-Zulassung</h2>
+            <h2 data-i18n="azav.title">Qualitätsmanagementsystem (QMS) und AZAV-Zulassung</h2>
             <span class="final-phase-badge" data-i18n="status.finalPhase">AZAV: finale Prüfphase</span>
           </div>
-          <p data-i18n="azav.text">Das QMS von GSS ist implementiert. Die AZAV-Zulassung befindet sich in der finalen Prüfphase; sie ist noch nicht erteilt.</p>
+          <p data-i18n="azav.text">Das Qualitätsmanagementsystem (QMS) von GSS ist implementiert. Die AZAV-Zulassung befindet sich in der finalen Prüfphase; sie ist noch nicht erteilt.</p>
           <p data-i18n="azav.text2">Im Mittelpunkt stehen individuelle Passung, nachvollziehbare Entwicklungsschritte und realistische Wege in Qualifizierung, berufliche Integration, Spezialisierung oder Selbständigkeit.</p>
           <p class="fineprint" data-i18n="azav.note">Die AZAV-Zulassung liegt noch nicht vor. Eine Förderung über AVGS oder Bildungsgutschein ist erst nach erfolgreicher Zulassung einer passenden Maßnahme und der Entscheidung des zuständigen Kostenträgers möglich.</p>
           <div class="actions azav-actions">
@@ -432,6 +441,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20260921-klaus-pr"></script>
+  <script src="script.js?v=20260921-offers"></script>
 </body>
 </html>
