@@ -12,8 +12,9 @@ if ("scrollRestoration" in history && document.querySelector(".module-page-main"
 const translations = {
   de: {
     "nav.home": "Startseite",
-    "nav.offer": "Leistung",
-    "nav.modules": "Module",
+    "nav.offer": "KompetenzWandel KI+",
+    "nav.overview": "Überblick",
+    "nav.modules": "Kernmodule & Ergänzungen",
     "nav.implementation": "Umsetzung",
     "nav.practiceImpact": "Praxis & Impact",
     "nav.impact": "Impact",
@@ -223,8 +224,9 @@ const translations = {
   },
   en: {
     "nav.home": "Home",
-    "nav.offer": "Service",
-    "nav.modules": "Modules",
+    "nav.offer": "KompetenzWandel KI+",
+    "nav.overview": "Overview",
+    "nav.modules": "Core & additional modules",
     "nav.implementation": "Implementation",
     "nav.practiceImpact": "Practice & impact",
     "nav.impact": "Impact",
@@ -434,8 +436,9 @@ const translations = {
   },
   es: {
     "nav.home": "Página principal",
-    "nav.offer": "Servicio",
-    "nav.modules": "Módulos",
+    "nav.offer": "KompetenzWandel KI+",
+    "nav.overview": "Resumen",
+    "nav.modules": "Módulos básicos y complementarios",
     "nav.implementation": "Implementación",
     "nav.practiceImpact": "Práctica e impacto",
     "nav.impact": "Impacto",
@@ -740,6 +743,10 @@ Object.assign(translations.es, {
   "form.roleEducation":"Socio educativo o de implementación","form.roleImpact":"Socio de impacto o RSC","form.roleOther":"Otra cooperación"
 });
 
+Object.assign(translations.de,{"nav.youth":"Einstieg und Anschluss"});
+Object.assign(translations.en,{"nav.youth":"Entry and Progression"});
+Object.assign(translations.es,{"nav.youth":"Acceso y continuidad"});
+
 const moduleDetails = {
   de: {
     scan: {
@@ -905,6 +912,7 @@ function renderModuleDetail(lang) {
   const duration = document.querySelector("#moduleDuration");
   const outcome = document.querySelector("#moduleOutcome");
   const access = document.querySelector("#moduleAccess");
+  const accessLink = document.querySelector("#moduleAccessLink");
   const visual = document.querySelector("#moduleVisual");
   if (title) title.textContent = detail.title;
   if (kicker) kicker.textContent = detail.kicker;
@@ -913,6 +921,12 @@ function renderModuleDetail(lang) {
   if (includes) includes.innerHTML = detail.includes.map((item) => `<li>${item}</li>`).join("");
   if (outcome) outcome.textContent = detail.outcome;
   if (access) access.textContent = detail.access;
+  if (accessLink) {
+    const labels = {de:"Digitale Souveränität ansehen →",en:"View Digital Sovereignty →",es:"Ver Soberanía Digital →"};
+    accessLink.hidden = key !== "einstieg";
+    accessLink.textContent = labels[lang] || labels.de;
+    accessLink.href = `index.html?lang=${lang}#digitale-souveraenitaet`;
+  }
   if (visual) visual.className = `detail-visual ${detail.visualClass}`;
 }
 
